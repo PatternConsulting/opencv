@@ -10,6 +10,7 @@
   <version>2.4.9</version>
   <name>Pattern OpenCV</name>
   <description>OpenCV packaged with native libraries and loader for multiple platforms.</description>
+  <url>http://github.com/patternconsulting/opencv</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -44,9 +45,9 @@
       <roles>
         <role>maintainer</role>
       </roles>
-      <properties>
+      <!--<properties>
         <picUrl>http://pattern.nu/images/team/michael.ahlers.png</picUrl>
-      </properties>
+      </properties>-->
     </developer>
   </developers>
 
