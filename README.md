@@ -52,9 +52,19 @@ static {
 
 This call will first attempt to load from the system-wide installation (exactly as if `System.loadLibrary(org.opencv.core.Core.NATIVE_LIBRARY_NAME);` were called), and, failing that, will select a binary from the package depending on the runtime environment's operating system and architecture. It will write that native library t a temporary location (defined by the environment), then load it using [`System#load(String)`](http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#load-java.lang.String-). _This involves writing to disk_, so consider the implications. Temporary files will be garbage-collected on clean shutdown.
 
+## Debugging
+
+[Java logging](http://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html) is used to produce log messages from `nu.pattern.OpenCV`.
+
 ## Rationale
 
 Developers wishing to use the Java API for OpenCV would typically go through the process of building the project, and building it for each platform they wished to support (_e.g._, 32-bit Linux, OS X). This project provides those binaries for inclusion as a typical dependency in Maven, Ivy, and SBT projects.
+
+Apart from testing, this package deliberately specifies no external dependencies. It does, however, make use of modern Java APIs (such as [Java NIO](http://docs.oracle.com/javase/tutorial/essential/io/fileio.html)).
+
+## Contributing
+
+Producing native binaries is the most cumbersome process in maintaining this package. If you can contribute binaries _for the current version_, please make a pull request including the build artifacts and any platform definitions in `nu.pattern.OpenCV`.
 
 ## Support
 
