@@ -76,43 +76,6 @@ Linux | x86_32
 
 If you can help create binaries for additional platforms, please see notes under [_Contributing_](#contributing).
 
-## Deployment
-
-This package is currently deployed to Sonatype. Pattern developers intending to deploy should create a `settings.xml` file similar to the following:
-
-```xml
-<settings>
-  <servers>
-    <server>
-      <id>sonatype-nexus-snapshots</id>
-      <username>jira-username</username>
-      <password>jira-password</password>
-    </server>
-    <server>
-      <id>sonatype-nexus-staging</id>
-      <username>jira-username</username>
-      <password>jira-password</password>
-    </server>
-  </servers>
-
-  <profiles>
-    <profile>
-      <id>gpg</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <properties>
-        <gpg.useagent>false</gpg.useagent>
-      </properties>
-    </profile>
-  </profiles>
-</settings>
-```
-
-Note the `gpg.useagent` property, which addresses issues with manual passphrase entry on some workstations.
-
-Remember to visit [Sonatype OSS](https://oss.sonatype.org) to close and release any package deployments.
-
 ## Credits
 
 This package is maintained by [Michael Ahlers](http://github.com/michaelahlers).
