@@ -4,7 +4,7 @@
 
 ## Usage
 
-### Maven 
+### [Maven](http://maven.apache.org/)
 
 ```xml
 <project>
@@ -20,6 +20,12 @@
   </dependencies>
   <!-- ... -->
 </project>
+```
+
+### [SBT](http://scala-sbt.org)
+
+```scala
+"nu.pattern" % "opencv" % "2.4.9"
 ```
 
 ## Rationale
