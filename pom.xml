@@ -10,7 +10,6 @@
   <version>2.4.9</version>
   <name>Pattern OpenCV</name>
   <description>OpenCV packaged with native libraries and loader for multiple platforms.</description>
-  <url>http://opencv.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,22 +18,35 @@
   <licenses>
     <license>
       <name>BSD License</name>
-      <url>https://github.com/Itseez/opencv/raw/master/LICENSE</url>
+      <url>http://github.com/Itseez/opencv/raw/master/LICENSE</url>
     </license>
   </licenses>
 
   <scm>
     <url>http://github.com/patternconsulting/opencv</url>
-    <connection>scm:git:https://github.com/patternconsulting/opencv.git</connection>
-    <developerConnection>scm:git:https://github.com/patternconsulting/opencv.git</developerConnection>
+    <connection>scm:git:http://github.com/patternconsulting/opencv.git</connection>
+    <developerConnection>scm:git:http://github.com/patternconsulting/opencv.git</developerConnection>
     <tag>v2.4.9</tag>
   </scm>
+
+  <issueManagement>
+    <system>GitHub</system>
+    <url>http://github.com/patternconsulting/opencv/issues</url>
+  </issueManagement>
 
   <developers>
     <developer>
       <id>michaelahlers</id>
       <name>Michael Ahlers</name>
       <email>michael.ahlers@pattern.nu</email>
+      <organization>Pattern</organization>
+      <organizationUrl>http://pattern.nu</organizationUrl>
+      <roles>
+        <role>maintainer</role>
+      </roles>
+      <properties>
+        <picUrl>http://pattern.nu/images/team/michael.ahlers.png</picUrl>
+      </properties>
     </developer>
   </developers>
 
