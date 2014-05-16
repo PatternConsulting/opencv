@@ -4,11 +4,39 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <packaging>jar</packaging>
   <groupId>nu.pattern</groupId>
   <artifactId>opencv</artifactId>
   <version>2.4.9</version>
   <name>Pattern OpenCV</name>
   <description>OpenCV packaged with native libraries and loader for multiple platforms.</description>
+  <url>http://opencv.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>BSD License</name>
+      <url>https://github.com/Itseez/opencv/blob/master/LICENSE</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>http://github.com/patternconsulting/opencv</url>
+    <connection>scm:git:https://github.com/patternconsulting/opencv.git</connection>
+    <developerConnection>scm:git:https://github.com/patternconsulting/opencv.git</developerConnection>
+    <tag>v2.4.9</tag>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>michaelahlers</id>
+      <name>Michael Ahlers</name>
+      <email>michael.ahlers@pattern.nu</email>
+    </developer>
+  </developers>
 
   <build>
     <plugins>
@@ -23,11 +51,13 @@
             <phase>generate-sources</phase>
             <configuration>
               <tasks>
+                <echo>Extracting Java classes.</echo>
                 <unjar src="${project.basedir}/upstream/opencv-249.jar" dest="${project.build.directory}/classes">
                   <patternset>
                     <include name="**/*.class"/>
                   </patternset>
                 </unjar>
+                <echo>Extracting Java sources.</echo>
                 <unjar src="${project.basedir}/upstream/opencv-249.jar" dest="${project.build.directory}/upstream-sources">
                   <patternset>
                     <include name="**/*.java"/>
