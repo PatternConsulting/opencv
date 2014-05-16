@@ -98,7 +98,7 @@ public class OpenCV {
 
     public TemporaryDirectory() {
       try {
-        path = Files.createTempDirectory(null);
+        path = Files.createTempDirectory("");
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
