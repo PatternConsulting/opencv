@@ -7,7 +7,7 @@
   <packaging>jar</packaging>
   <groupId>nu.pattern</groupId>
   <artifactId>opencv</artifactId>
-  <version>2.4.9</version>
+  <version>2.4.9-1</version>
   <name>Pattern OpenCV</name>
   <description>OpenCV packaged with native libraries and loader for multiple platforms.</description>
   <url>http://github.com/patternconsulting/opencv</url>
@@ -27,7 +27,7 @@
     <url>http://github.com/patternconsulting/opencv</url>
     <connection>scm:git:http://github.com/patternconsulting/opencv.git</connection>
     <developerConnection>scm:git:http://github.com/patternconsulting/opencv.git</developerConnection>
-    <tag>v2.4.9</tag>
+    <tag>v2.4.9-1</tag>
   </scm>
 
   <issueManagement>
