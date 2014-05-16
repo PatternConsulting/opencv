@@ -1,0 +1,8 @@
+language: java
+
+env:
+  - ARCH=x64
+  - ARCH=x32
+
+jdk:
+  - oraclejdk8
