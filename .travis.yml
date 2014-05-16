@@ -1,9 +1,5 @@
 language: java
 
-os:
-  - linux
-  - osx
-
 env:
   - ARCH=x64
   - ARCH=x32
