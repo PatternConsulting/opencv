@@ -70,6 +70,7 @@ The following platforms are supported by this package:
 
 OS | Architecture
 --- | ---
+OS X | x86_32
 OS X | x86_64
 Linux | x86_64
 Linux | x86_32
