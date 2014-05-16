@@ -53,9 +53,7 @@
 
   <build>
     <plugins>
-      <!--
-        Extracts the compiled Java classes and sources built by the OpenCV project. Avoids any manual process which may introduce errors.
-      -->
+      <!-- Extracts the compiled Java classes and sources built by the OpenCV project. Avoids any manual process which may introduce errors. -->
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>1.3</version>
@@ -67,16 +65,16 @@
                 <echo>Extracting Java classes.</echo>
                 <unjar src="${project.basedir}/upstream/opencv-249.jar" dest="${project.build.directory}/classes">
                   <patternset>
-                    <include name="**/*.class"/>
+                    <include name="**/*"/>
                   </patternset>
                 </unjar>
 
-                <!--<echo>Extracting Java test classes.</echo>
+                <echo>Extracting Java test classes.</echo>
                 <unjar src="${project.basedir}/upstream/opencv-test.jar" dest="${project.build.directory}/test-classes">
                   <patternset>
                     <include name="**/*.class"/>
                   </patternset>
-                </unjar>-->
+                </unjar>
 
                 <echo>Extracting Java sources.</echo>
                 <unjar src="${project.basedir}/upstream/opencv-249.jar" dest="${project.build.directory}/upstream-sources">
@@ -93,9 +91,7 @@
         </executions>
       </plugin>
 
-      <!--
-        The upstream sources should be included in the source JAR, but not the binary JAR. Ensure upstream-sources is added after the compile phase and before package.
-      -->
+      <!-- The upstream sources should be included in the source JAR, but not the binary JAR. Ensure upstream-sources is added after the compile phase and before package. -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
@@ -115,9 +111,7 @@
         </executions>
       </plugin>
 
-      <!--
-        Package local and upstream sources.
-      -->
+      <!-- Package local and upstream sources. -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
@@ -142,11 +136,18 @@
             </property>
           </systemProperties>
           <properties>
+            <!-- Bootstrap the test classes with the extracted library, if applicable. -->
             <property>
               <name>listener</name>
               <value>nu.pattern.OpenCVRunListener</value>
             </property>
           </properties>
+          <!-- It's preferred to keep all upstream resources contained in a single location. Since the test classes use the working directory to find their fixtures, it's necessary to specify this location at test time. -->
+          <workingDirectory>${project.basedir}/upstream</workingDirectory>
+          <excludes>
+            <!-- Contains no test cases (it's the base class for others, however), so it must be excluded to avoid failrues. -->
+            <exclude>**/OpenCVTestCase.*</exclude>
+          </excludes>
         </configuration>
       </plugin>
     </plugins>
