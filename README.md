@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/PatternConsulting/opencv.svg?branch=master)](https://travis-ci.org/PatternConsulting/opencv)
 
-[OpenCV](http://opencv.org) Java bindings packaged with native libraries, seamlessly delivered as a Maven dependency.
+[OpenCV](http://opencv.org) Java bindings packaged with native libraries, seamlessly delivered as a turn-key Maven dependency.
 
 ## Usage
 
@@ -65,6 +65,16 @@ Apart from testing, this package deliberately specifies no external dependencies
 Producing native binaries is the most cumbersome process in maintaining this package. If you can contribute binaries _for the current version_, please make a pull request including the build artifacts and any platform definitions in `nu.pattern.OpenCV`.
 
 ## Support
+
+The following platforms are supported by this package:
+
+OS | Architecture
+--- | ---
+OS X | x86_64
+Linux | x86_64
+Linux | x86_32
+
+## Credits
 
 This package is maintained by [Michael Ahlers](http://github.com/michaelahlers).
   
