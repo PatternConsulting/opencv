@@ -54,7 +54,7 @@ This call will first attempt to load from the system-wide installation (exactly 
 
 ## Rationale
 
-Developers wishing to use the Java API for OpenCV would typically go through the process of building the project, and building it for each platform they wished to support (_e.g._, 32-bit Linux, OS X). This project provides those binaries for inclusion as dependency in Maven, Ivy, and SBT projects.
+Developers wishing to use the Java API for OpenCV would typically go through the process of building the project, and building it for each platform they wished to support (_e.g._, 32-bit Linux, OS X). This project provides those binaries for inclusion as a typical dependency in Maven, Ivy, and SBT projects.
 
 ## Support
 
