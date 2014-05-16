@@ -178,9 +178,10 @@ public class OpenCV {
       }
 
       final InputStream binary = OpenCV.class.getResourceAsStream(location);
-      final Path destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve(location.substring(location.lastIndexOf('/') + 1));
+      final Path destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve("./" + location).normalize();
 
       try {
+        Files.createDirectories(destination.getParent());
         Files.copy(binary, destination);
         System.load(destination.toString());
       } catch (final IOException ioe) {
