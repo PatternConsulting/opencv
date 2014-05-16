@@ -74,6 +74,8 @@ OS X | x86_64
 Linux | x86_64
 Linux | x86_32
 
+If you can help create binaries for additional platforms, please see notes under [_Contributing_](#contributing).
+
 ## Credits
 
 This package is maintained by [Michael Ahlers](http://github.com/michaelahlers).
