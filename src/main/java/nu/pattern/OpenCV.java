@@ -98,7 +98,7 @@ public class OpenCV {
 
     public TemporaryDirectory() {
       try {
-        path = Files.createTempDirectory("pattern-opencv");
+        path = Files.createTempDirectory(null);
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
@@ -165,10 +165,10 @@ public class OpenCV {
         case LINUX:
           switch (arch) {
             case X86_32:
-              location = "/org/opencv/linux/x86_32/libopencv_java249.so";
+              location = "/nu/pattern/opencv/linux/x86_32/libopencv_java249.so";
               break;
             case X86_64:
-              location = "/org/opencv/linux/x86_64/libopencv_java249.so";
+              location = "/nu/pattern/opencv/linux/x86_64/libopencv_java249.so";
               break;
             default:
               throw new UnsupportedPlatformException(os, arch);
@@ -177,7 +177,7 @@ public class OpenCV {
         case OSX:
           switch (arch) {
             case X86_64:
-              location = "/org/opencv/osx/x86_64/libopencv_java249.dylib";
+              location = "/nu/pattern/opencv/osx/x86_64/libopencv_java249.dylib";
               break;
             default:
               throw new UnsupportedPlatformException(os, arch);
