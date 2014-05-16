@@ -50,7 +50,7 @@ static {
 }
 ```
 
-This call will first attempt to load from the system-wide installation (exactly as if `System.loadLibrary(org.opencv.core.Core.NATIVE_LIBRARY_NAME);` were called), and, failing that, will select a binary from the package depending on the runtime environment's operating system and architecture. It will write that native library t a temporary location, then load it using [`System#load(String)`](http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#load-java.lang.String-). *Be aware this involves disk access*, so consider the implications.
+This call will first attempt to load from the system-wide installation (exactly as if `System.loadLibrary(org.opencv.core.Core.NATIVE_LIBRARY_NAME);` were called), and, failing that, will select a binary from the package depending on the runtime environment's operating system and architecture. It will write that native library t a temporary location (defined by the environment), then load it using [`System#load(String)`](http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#load-java.lang.String-). _This involves writing to disk_, so consider the implications. Temporary files will be garbage-collected on clean shutdown.
 
 ## Rationale
 
