@@ -6,3 +6,4 @@ env:
 
 jdk:
   - oraclejdk8
+  - oraclejdk7
