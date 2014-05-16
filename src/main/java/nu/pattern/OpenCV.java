@@ -12,9 +12,13 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 public class OpenCV {
+
+  private final static Logger logger = Logger.getLogger(OpenCV.class.getName());
 
   static enum OS {
     OSX("^[Mm]ac OS X$"),
@@ -45,6 +49,7 @@ public class OpenCV {
 
       for (final OS os : OS.values()) {
         if (os.is(osName)) {
+          logger.log(Level.FINEST, "Current environment matches operating system descriptor \"{0}\".", os);
           return os;
         }
       }
@@ -72,6 +77,7 @@ public class OpenCV {
 
       for (final Arch arch : Arch.values()) {
         if (arch.is(osArch)) {
+          logger.log(Level.FINEST, "Current environment matches architecture descriptor \"{0}\".", arch);
           return arch;
         }
       }
@@ -91,7 +97,7 @@ public class OpenCV {
 
     public TemporaryDirectory() {
       try {
-        path = Files.createTempDirectory("nu.pattern.opencv");
+        path = Files.createTempDirectory("pattern-opencv");
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
@@ -177,17 +183,24 @@ public class OpenCV {
           throw new UnsupportedPlatformException(os, arch);
       }
 
+      logger.log(Level.FINEST, "Selected native binary \"{0}\".", location);
+
       final InputStream binary = OpenCV.class.getResourceAsStream(location);
       final Path destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve("./" + location).normalize();
 
       try {
+        logger.log(Level.FINEST, "Copying native binary to \"{0}\".", destination);
+
         Files.createDirectories(destination.getParent());
         Files.copy(binary, destination);
+
+        logger.log(Level.FINEST, "Loading native binary at \"{0}\".", destination);
         System.load(destination.toString());
       } catch (final IOException ioe) {
         throw new IllegalStateException(String.format("Error writing native library to \"%s\".", destination), ioe);
       }
 
+      logger.log(Level.FINEST, "Completed native OpenCV library loading.");
     }
   }
 }
