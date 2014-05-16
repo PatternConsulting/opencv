@@ -22,6 +22,18 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <profiles>
+    <profile>
+      <activation>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+        <!-- OpenCV's Javadocs fail DocLint tests. See http://stackoverflow.com/a/16743137 for tip. -->
+        <javadoc.parameters>-Xdoclint:none</javadoc.parameters>
+      </properties>
+    </profile>
+  </profiles>
+
   <licenses>
     <license>
       <name>BSD License</name>
@@ -174,8 +186,7 @@
             <link>http://docs.opencv.org/java/</link>
             <link>http://docs.oracle.com/javase/8/docs/api/</link>
           </links>
-          <!-- OpenCV's Javadocs fail DocLint tests. See http://stackoverflow.com/a/16743137 for tip. -->
-          <additionalparam>-Xdoclint:none</additionalparam>
+          <additionalparam>${javadoc.parameters}</additionalparam>
         </configuration>
       </plugin>
 
