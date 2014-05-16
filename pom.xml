@@ -70,6 +70,14 @@
                     <include name="**/*.class"/>
                   </patternset>
                 </unjar>
+
+                <!--<echo>Extracting Java test classes.</echo>
+                <unjar src="${project.basedir}/upstream/opencv-test.jar" dest="${project.build.directory}/test-classes">
+                  <patternset>
+                    <include name="**/*.class"/>
+                  </patternset>
+                </unjar>-->
+
                 <echo>Extracting Java sources.</echo>
                 <unjar src="${project.basedir}/upstream/opencv-249.jar" dest="${project.build.directory}/upstream-sources">
                   <patternset>
@@ -133,6 +141,12 @@
               <value>${project.build.directory}/test-classes/logging.properties</value>
             </property>
           </systemProperties>
+          <properties>
+            <property>
+              <name>listener</name>
+              <value>nu.pattern.OpenCVRunListener</value>
+            </property>
+          </properties>
         </configuration>
       </plugin>
     </plugins>
