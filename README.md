@@ -8,4 +8,4 @@ Developers wishing to use the Java API for OpenCV would typically go through the
   
 ## Acknowledgements
 
-- [Greg Borenstein](https://github.com/atduskgreg), who's advice and [OpenCV for Processing](https://github.com/atduskgreg/opencv-processing) informed this project's development. 
+- [Greg Borenstein](https://github.com/atduskgreg), who's advice and [OpenCV for Processing](https://github.com/atduskgreg/opencv-processing) project informed this package's development. 
