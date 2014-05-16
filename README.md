@@ -20,7 +20,7 @@ Pattern's OpenCV package is added to your project as any other dependency.
     <dependency>
       <groupId>nu.pattern</groupId>
       <artifactId>opencv</artifactId>
-      <version>2.4.9-1</version>
+      <version>2.4.9-2</version>
     </dependency>
     <!-- ... -->
   </dependencies>
@@ -31,7 +31,7 @@ Pattern's OpenCV package is added to your project as any other dependency.
 #### [SBT](http://scala-sbt.org)
 
 ```scala
-"nu.pattern" % "opencv" % "2.4.9-1"
+"nu.pattern" % "opencv" % "2.4.9-2"
 ```
 
 ### API
