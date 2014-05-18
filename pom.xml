@@ -103,6 +103,14 @@
 
   <build>
     <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+
       <!-- Extracts the compiled Java classes and sources built by the OpenCV project. Avoids any manual process which may introduce errors. -->
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
