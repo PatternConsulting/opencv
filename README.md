@@ -17,21 +17,6 @@ Pattern's OpenCV package is added to your project as any other dependency.
   
   <!-- ... -->
   
-  <repositories>
-  
-    <!-- ... -->
-    
-    <repository>
-      <name>Sonatype (releases)</name>
-      <url>https://oss.sonatype.org/content/repositories/releases/</url>
-    </repository>
-    
-    <!-- ... -->
-    
-  <repositories>
-  
-  <!-- ... -->
-  
   <dependencies>
     
     <!-- ... -->
@@ -54,11 +39,11 @@ Pattern's OpenCV package is added to your project as any other dependency.
 #### [SBT](http://scala-sbt.org)
 
 ```scala
-resolvers += "Sonatype (releases)" at "https://oss.sonatype.org/content/repositories/releases/"
-
 // ...
 
-"nu.pattern" % "opencv" % "2.4.9-5"
+libraryDependencies += "nu.pattern" % "opencv" % "2.4.9-5"
+
+// ...
 ```
 
 ### API
