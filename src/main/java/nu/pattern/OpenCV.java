@@ -208,22 +208,22 @@ public class OpenCV {
 
           Files.createDirectories(destination.getParent());
           Files.copy(binary, destination);
-
-          logger.log(Level.FINEST, "Loading native binary at \"{0}\".", destination);
-
-          final String originalLibraryPath = System.getProperty("java.library.path");
-          System.setProperty("java.library.path", originalLibraryPath + System.getProperty("path.separator") + destination.getParent());
-
-          forceLibraryPathReload();
-
-          logger.log(Level.FINEST, "System library path now \"{0}\".", System.getProperty("java.library.path"));
-
-          logger.log(Level.FINEST, "Native library \"{0}\" maps to \"{1}\".", new Object[]{Core.NATIVE_LIBRARY_NAME, System.mapLibraryName(Core.NATIVE_LIBRARY_NAME)});
-
-          System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         } catch (final IOException ioe) {
           throw new IllegalStateException(String.format("Error writing native library to \"%s\".", destination), ioe);
         }
+
+        logger.log(Level.FINEST, "Loading native binary at \"{0}\".", destination);
+
+        final String originalLibraryPath = System.getProperty("java.library.path");
+        System.setProperty("java.library.path", originalLibraryPath + System.getProperty("path.separator") + destination.getParent());
+
+        forceLibraryPathReload();
+
+        logger.log(Level.FINEST, "System library path now \"{0}\".", System.getProperty("java.library.path"));
+
+        logger.log(Level.FINEST, "Native library \"{0}\" maps to \"{1}\".", new Object[]{Core.NATIVE_LIBRARY_NAME, System.mapLibraryName(Core.NATIVE_LIBRARY_NAME)});
+
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
         logger.log(Level.FINEST, "Completed native OpenCV library loading.");
       }
