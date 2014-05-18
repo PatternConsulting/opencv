@@ -1,10 +1,13 @@
 package nu.pattern;
 
 import org.opencv.core.Core;
+import sun.reflect.Reflection;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -147,10 +150,29 @@ public class OpenCV {
 
   }
 
+//private static void loadLibraryDirect(final Class<?> context, final String name) {
+//  final String errorMessage = String.format("Error invoking \"%s\" on %s", "loadLibrary0", Runtime.class);
+//
+//  try {
+//    final Runtime runtime = Runtime.getRuntime();
+//    final Method loader = Runtime.class.getDeclaredMethod("loadLibrary0", Class.class, String.class);
+//    loader.setAccessible(true);
+//    loader.invoke(runtime, context, name);
+//  } catch (final Throwable t) {
+//    final Throwable cause = t.getCause();
+//    if (cause instanceof UnsatisfiedLinkError) {
+//      System.out.println("wtf");
+//      throw UnsatisfiedLinkError.class.cast(cause);
+//    } else {
+//      throw new RuntimeException(errorMessage, t);
+//    }
+//  }
+//}
+
   /**
    * Attempts first to load {@link Core#NATIVE_LIBRARY_NAME} without additional setup. If that succeeds, the system already has the appropriate OpenCV library available. If that fails (with {@link UnsatisfiedLinkError}), this call will write the appropriate native library from the class path to a temporary directory, then add that directory to {@code java.library.path}. Afterwards, subsequent {@link System#loadLibrary(String)} calls with {@link Core#NATIVE_LIBRARY_NAME} will succeed without modification. This has the benefit of keeping client libraries decoupled from Pattern's packages.
    */
-  public static void loadLibrary() {
+  public static void loadLibrary(/*final Class<?> context*/) {
     try {
       /* Prefer loading the installed library. */
       System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
@@ -200,8 +222,8 @@ public class OpenCV {
 
         logger.log(Level.FINEST, "Loading native binary at \"{0}\".", destination);
 
-        final String originalLibaryPath = System.getProperty("java.library.path");
-        System.setProperty("java.library.path", originalLibaryPath + System.getProperty("path.separator") + destination.getParent());
+        final String originalLibraryPath = System.getProperty("java.library.path");
+        System.setProperty("java.library.path", originalLibraryPath + System.getProperty("path.separator") + destination.getParent());
 
         /* See https://github.com/atduskgreg/opencv-processing/blob/master/src/gab/opencv/OpenCV.java for clarification. */
         final Field systemPathsField = ClassLoader.class.getDeclaredField("sys_paths");
@@ -213,7 +235,6 @@ public class OpenCV {
         logger.log(Level.FINEST, "Native library \"{0}\" maps to \"{1}\".", new Object[]{Core.NATIVE_LIBRARY_NAME, System.mapLibraryName(Core.NATIVE_LIBRARY_NAME)});
 
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-
       } catch (final IOException ioe) {
         throw new IllegalStateException(String.format("Error writing native library to \"%s\".", destination), ioe);
       } catch (IllegalAccessException e) {
