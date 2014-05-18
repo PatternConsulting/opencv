@@ -163,10 +163,12 @@ public class OpenCV {
 
     private void loadLibrary() {
       try {
-      /* Prefer loading the installed library. */
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
       } catch (final UnsatisfiedLinkError ule) {
-      /* Failing that, deploy and run a packaged binary. */
+        if (!String.format("no %s in java.library.path", Core.NATIVE_LIBRARY_NAME).equals(ule.getMessage())) {
+          /* Only extract the native binary if the original error indicates it's missing from the library path.  */
+          throw ule;
+        }
 
         final OS os = OS.getCurrent();
         final Arch arch = Arch.getCurrent();
@@ -205,7 +207,6 @@ public class OpenCV {
 
         try {
           logger.log(Level.FINEST, "Copying native binary to \"{0}\".", destination);
-
           Files.createDirectories(destination.getParent());
           Files.copy(binary, destination);
         } catch (final IOException ioe) {
