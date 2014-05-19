@@ -149,48 +149,39 @@ public class OpenCV {
 
   }
 
-//public static enum Loading {
-//  FROM_LIBRARY_PATH,
-//  FROM_FILE_SYSTEM
-//}
-
   /**
-   * Attempts first to load {@link Core#NATIVE_LIBRARY_NAME} without additional setup. If that succeeds, the system already has the appropriate OpenCV library available. If that fails (with {@link UnsatisfiedLinkError}), this call will write the appropriate native library from the class path to a temporary directory, then add that directory to {@code java.library.path}. Afterwards, subsequent {@link System#loadLibrary(String)} calls with {@link Core#NATIVE_LIBRARY_NAME} will succeed without modification. This has the benefit of keeping client libraries decoupled from Pattern's packages.
+   * Exactly once per {@link ClassLoader}, attempt to load the native library (via {@link System#loadLibrary(String)} with {@link Core#NATIVE_LIBRARY_NAME}). If the first attempt fails, the native binary will be extracted from the classpath to a temporary location (which gets cleaned up on shutdown), that location is added to the {@code java.library.path} system property and {@link ClassLoader#usr_paths}, and then another call to load the library is made. Note this method uses reflection to gain access to private memory in {@link ClassLoader} as there's no documented method to augment the library path at runtime. Spurious calls are safe.
    */
-  public static void loadLibrary() {
-    try {
-      System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-    } catch (final UnsatisfiedLinkError ule) {
-
-      /* Only extract the native binary if the original error indicates it's missing from the library path. */
-      if (!String.format("no %s in java.library.path", Core.NATIVE_LIBRARY_NAME).equals(ule.getMessage())) {
-        logger.log(Level.FINEST, String.format("Encountered unexpected loading error."), ule);
-        throw ule;
-      }
-
-      LibraryLoader.getInstance().loadLibrary();
-
-    }
+  public static void loadShared() {
+    SharedLoader.getInstance();
   }
 
-  private static class LibraryLoader {
-    private final Path libraryPath;
+  /**
+   * @see <a href="http://en.wikipedia.org/wiki/Initialization-on-demand_holder_idiom">Initialization-on-demand holder idiom</a>
+   */
+  private static class SharedLoader {
+    private Path libraryPath;
 
-    private LibraryLoader() {
-      /* Retain this path for cleaning up later. */
-      this.libraryPath = extractNativeBinary();
-    }
+    private SharedLoader() {
+      try {
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        logger.log(Level.FINEST, "Loaded existing OpenCV library \"{0}\" from library path.", Core.NATIVE_LIBRARY_NAME);
+      } catch (final UnsatisfiedLinkError ule) {
 
-    private void loadLibrary() {
-      logger.log(Level.FINEST, "Loading native binary at \"{0}\".", libraryPath);
+        /* Only update the library path and load if the original error indicates it's missing from the library path. */
+        if (!String.format("no %s in java.library.path", Core.NATIVE_LIBRARY_NAME).equals(ule.getMessage())) {
+          logger.log(Level.FINEST, String.format("Encountered unexpected loading error."), ule);
+          throw ule;
+        }
 
-      addLibraryPath(libraryPath.getParent());
+        /* Retain this path for cleaning up the library path later. */
+        this.libraryPath = extractNativeBinary();
 
-      logger.log(Level.FINEST, "Native library \"{0}\" maps to \"{1}\".", new Object[]{Core.NATIVE_LIBRARY_NAME, System.mapLibraryName(Core.NATIVE_LIBRARY_NAME)});
-      System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-// System.load(libraryPath.normalize().toString());
+        addLibraryPath(libraryPath.getParent());
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
-      logger.log(Level.FINEST, "Completed native OpenCV library loading .");
+        logger.log(Level.FINEST, "OpenCV library \"{0}\" loaded from extracted copy at \"{1}\".", new Object[]{Core.NATIVE_LIBRARY_NAME, System.mapLibraryName(Core.NATIVE_LIBRARY_NAME)});
+      }
     }
 
     /**
@@ -200,66 +191,19 @@ public class OpenCV {
     protected void finalize() throws Throwable {
       super.finalize();
 
+      if (null == libraryPath) {
+        return;
+      }
+
       removeLibraryPath(libraryPath.getParent());
     }
 
     private static class Holder {
-      private static final LibraryLoader INSTANCE = new LibraryLoader();
+      private static final SharedLoader INSTANCE = new SharedLoader();
     }
 
-    public static LibraryLoader getInstance() {
+    public static SharedLoader getInstance() {
       return Holder.INSTANCE;
-    }
-
-    /**
-     * Selects the appropriate packaged binary, extracts it to a temporary location (which gets deleted when the JVM shuts down), and returns a {@link Path} to that file.
-     */
-    @CallerSensitive
-    private static Path extractNativeBinary() {
-      final OS os = OS.getCurrent();
-      final Arch arch = Arch.getCurrent();
-      final String location;
-
-      switch (os) {
-        case LINUX:
-          switch (arch) {
-            case X86_32:
-              location = "/nu/pattern/opencv/linux/x86_32/libopencv_java249.so";
-              break;
-            case X86_64:
-              location = "/nu/pattern/opencv/linux/x86_64/libopencv_java249.so";
-              break;
-            default:
-              throw new UnsupportedPlatformException(os, arch);
-          }
-          break;
-        case OSX:
-          switch (arch) {
-            case X86_64:
-              location = "/nu/pattern/opencv/osx/x86_64/libopencv_java249.dylib";
-              break;
-            default:
-              throw new UnsupportedPlatformException(os, arch);
-          }
-          break;
-        default:
-          throw new UnsupportedPlatformException(os, arch);
-      }
-
-      logger.log(Level.FINEST, "Selected native binary \"{0}\".", location);
-
-      final InputStream binary = OpenCV.class.getResourceAsStream(location);
-      final Path destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve("./" + location).normalize();
-
-      try {
-        logger.log(Level.FINEST, "Copying native binary to \"{0}\".", destination);
-        Files.createDirectories(destination.getParent());
-        Files.copy(binary, destination);
-      } catch (final IOException ioe) {
-        throw new IllegalStateException(String.format("Error writing native library to \"%s\".", destination), ioe);
-      }
-
-      return destination;
     }
 
     /**
@@ -309,6 +253,90 @@ public class OpenCV {
         throw new RuntimeException("Failed to get field handle to set library path");
       }
     }
+  }
 
+  /**
+   * Exactly once per {@link ClassLoader}, extract the native binary from the classpath to a temporary location (which gets cleaned up on shutdown), and load that binary (via {@link System#load(String)}). Spurious calls are safe.
+   */
+  public static void loadLocally() {
+    LocalLoader.getInstance();
+  }
+
+  private static class LocalLoader {
+    private LocalLoader() {
+      /* Retain this path for cleaning up later. */
+      final Path libraryPath = extractNativeBinary();
+      System.load(libraryPath.normalize().toString());
+
+      logger.log(Level.FINEST, "OpenCV library \"{0}\" loaded from extracted copy at \"{1}\".", new Object[]{Core.NATIVE_LIBRARY_NAME, System.mapLibraryName(Core.NATIVE_LIBRARY_NAME)});
+    }
+
+    private static class Holder {
+      private static final LocalLoader INSTANCE = new LocalLoader();
+    }
+
+    public static LocalLoader getInstance() {
+      return Holder.INSTANCE;
+    }
+  }
+
+  /**
+   * Selects the appropriate packaged binary, extracts it to a temporary location (which gets deleted when the JVM shuts down), and returns a {@link Path} to that file.
+   */
+  @CallerSensitive
+  private static Path extractNativeBinary() {
+    final OS os = OS.getCurrent();
+    final Arch arch = Arch.getCurrent();
+    return extractNativeBinary(os, arch);
+  }
+
+  /**
+   * Extracts the packaged binary for the specified platform to a temporary location (which gets deleted when the JVM shuts down), and returns a {@link Path} to that file.
+   */
+  private static Path extractNativeBinary(final OS os, final Arch arch) {
+    final String location;
+
+    switch (os) {
+      case LINUX:
+        switch (arch) {
+          case X86_32:
+            location = "/nu/pattern/opencv/linux/x86_32/libopencv_java249.so";
+            break;
+          case X86_64:
+            location = "/nu/pattern/opencv/linux/x86_64/libopencv_java249.so";
+            break;
+          default:
+            throw new UnsupportedPlatformException(os, arch);
+        }
+        break;
+      case OSX:
+        switch (arch) {
+          case X86_64:
+            location = "/nu/pattern/opencv/osx/x86_64/libopencv_java249.dylib";
+            break;
+          default:
+            throw new UnsupportedPlatformException(os, arch);
+        }
+        break;
+      default:
+        throw new UnsupportedPlatformException(os, arch);
+    }
+
+    logger.log(Level.FINEST, "Selected native binary \"{0}\".", location);
+
+    final InputStream binary = OpenCV.class.getResourceAsStream(location);
+    final Path destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve("./" + location).normalize();
+
+    try {
+      logger.log(Level.FINEST, "Copying native binary to \"{0}\".", destination);
+      Files.createDirectories(destination.getParent());
+      Files.copy(binary, destination);
+    } catch (final IOException ioe) {
+      throw new IllegalStateException(String.format("Error writing native library to \"%s\".", destination), ioe);
+    }
+
+    logger.log(Level.FINEST, "Extracted native binary to \"{0}\".", destination);
+
+    return destination;
   }
 }
