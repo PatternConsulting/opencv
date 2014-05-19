@@ -1,6 +1,7 @@
 package nu.pattern;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -158,5 +159,23 @@ public class NativeLibraries {
       parent = parent.getParent();
     }
     return result;
+  }
+
+  public static void loadLibraryDirect(final Class<?> context, final String name) {
+    final String errorMessage = String.format("Error invoking \"%s\" on %s", "loadLibrary0", Runtime.class);
+
+    try {
+      final Runtime runtime = Runtime.getRuntime();
+      final Method loader = Runtime.class.getDeclaredMethod("loadLibrary0", Class.class, String.class);
+      loader.setAccessible(true);
+      loader.invoke(runtime, context, name);
+    } catch (final Throwable t) {
+      final Throwable cause = t.getCause();
+      if (cause instanceof UnsatisfiedLinkError) {
+        throw UnsatisfiedLinkError.class.cast(cause);
+      } else {
+        throw new RuntimeException(errorMessage, t);
+      }
+    }
   }
 }
