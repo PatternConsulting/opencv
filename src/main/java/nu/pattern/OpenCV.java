@@ -1,13 +1,11 @@
 package nu.pattern;
 
 import org.opencv.core.Core;
-import sun.reflect.Reflection;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -158,7 +156,11 @@ public class OpenCV {
   }
 
   private static class Loader {
+    private final Path libraryPath;
+
     private Loader() {
+      /* Retain this path for cleaning up later. */
+      this.libraryPath = extractNativeBinary();
     }
 
     private void loadLibrary() {
@@ -166,68 +168,31 @@ public class OpenCV {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
       } catch (final UnsatisfiedLinkError ule) {
         if (!String.format("no %s in java.library.path", Core.NATIVE_LIBRARY_NAME).equals(ule.getMessage())) {
-          /* Only extract the native binary if the original error indicates it's missing from the library path.  */
+          /* Only extract the native binary if the original error indicates it's missing from the library path. */
+          logger.log(Level.FINEST, String.format("Encountered unexpected loading error."), ule);
           throw ule;
         }
 
-        final OS os = OS.getCurrent();
-        final Arch arch = Arch.getCurrent();
-        final String location;
+        logger.log(Level.FINEST, "Loading native binary at \"{0}\".", libraryPath);
 
-        switch (os) {
-          case LINUX:
-            switch (arch) {
-              case X86_32:
-                location = "/nu/pattern/opencv/linux/x86_32/libopencv_java249.so";
-                break;
-              case X86_64:
-                location = "/nu/pattern/opencv/linux/x86_64/libopencv_java249.so";
-                break;
-              default:
-                throw new UnsupportedPlatformException(os, arch);
-            }
-            break;
-          case OSX:
-            switch (arch) {
-              case X86_64:
-                location = "/nu/pattern/opencv/osx/x86_64/libopencv_java249.dylib";
-                break;
-              default:
-                throw new UnsupportedPlatformException(os, arch);
-            }
-            break;
-          default:
-            throw new UnsupportedPlatformException(os, arch);
-        }
-
-        logger.log(Level.FINEST, "Selected native binary \"{0}\".", location);
-
-        final InputStream binary = OpenCV.class.getResourceAsStream(location);
-        final Path destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve("./" + location).normalize();
-
-        try {
-          logger.log(Level.FINEST, "Copying native binary to \"{0}\".", destination);
-          Files.createDirectories(destination.getParent());
-          Files.copy(binary, destination);
-        } catch (final IOException ioe) {
-          throw new IllegalStateException(String.format("Error writing native library to \"%s\".", destination), ioe);
-        }
-
-        logger.log(Level.FINEST, "Loading native binary at \"{0}\".", destination);
-
-        final String originalLibraryPath = System.getProperty("java.library.path");
-        System.setProperty("java.library.path", originalLibraryPath + System.getProperty("path.separator") + destination.getParent());
-
-        forceLibraryPathReload();
-
-        logger.log(Level.FINEST, "System library path now \"{0}\".", System.getProperty("java.library.path"));
+        addLibraryPath(libraryPath.getParent());
 
         logger.log(Level.FINEST, "Native library \"{0}\" maps to \"{1}\".", new Object[]{Core.NATIVE_LIBRARY_NAME, System.mapLibraryName(Core.NATIVE_LIBRARY_NAME)});
-
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        //System.load(destination.normalize().toString());
 
-        logger.log(Level.FINEST, "Completed native OpenCV library loading.");
+        logger.log(Level.FINEST, "Completed native OpenCV library loading .");
       }
+    }
+
+    /**
+     * Cleans up patches done to the environment.
+     */
+    @Override
+    protected void finalize() throws Throwable {
+      super.finalize();
+
+      removeLibraryPath(libraryPath.getParent());
     }
 
     private static class Holder {
@@ -238,15 +203,103 @@ public class OpenCV {
       return Holder.INSTANCE;
     }
 
-    private static void forceLibraryPathReload() {
+    /**
+     * Selects the appropriate packaged binary, extracts it to a temporary location (which gets deleted when the JVM shuts down), and returns a {@link Path} to that file.
+     */
+    private static Path extractNativeBinary() {
+      final OS os = OS.getCurrent();
+      final Arch arch = Arch.getCurrent();
+      final String location;
+
+      switch (os) {
+        case LINUX:
+          switch (arch) {
+            case X86_32:
+              location = "/nu/pattern/opencv/linux/x86_32/libopencv_java249.so";
+              break;
+            case X86_64:
+              location = "/nu/pattern/opencv/linux/x86_64/libopencv_java249.so";
+              break;
+            default:
+              throw new UnsupportedPlatformException(os, arch);
+          }
+          break;
+        case OSX:
+          switch (arch) {
+            case X86_64:
+              location = "/nu/pattern/opencv/osx/x86_64/libopencv_java249.dylib";
+              break;
+            default:
+              throw new UnsupportedPlatformException(os, arch);
+          }
+          break;
+        default:
+          throw new UnsupportedPlatformException(os, arch);
+      }
+
+      logger.log(Level.FINEST, "Selected native binary \"{0}\".", location);
+
+      final InputStream binary = OpenCV.class.getResourceAsStream(location);
+      final Path destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve("./" + location).normalize();
+
       try {
-      /* See https://github.com/atduskgreg/opencv-processing/blob/master/src/gab/opencv/OpenCV.java for clarification. */
-        final Field systemPathsField = ClassLoader.class.getDeclaredField("sys_paths");
-        systemPathsField.setAccessible(true);
-        systemPathsField.set(null, null);
-      } catch (final Exception e) {
-        throw new RuntimeException(String.format("Couldn't force library path reload by resetting \"%s\" in %s.", "sys_paths", ClassLoader.class), e);
+        logger.log(Level.FINEST, "Copying native binary to \"{0}\".", destination);
+        Files.createDirectories(destination.getParent());
+        Files.copy(binary, destination);
+      } catch (final IOException ioe) {
+        throw new IllegalStateException(String.format("Error writing native library to \"%s\".", destination), ioe);
+      }
+
+      return destination;
+    }
+
+    /**
+     * Adds the provided {@link Path}, normalized, to the {@link ClassLoader#usr_paths} array, as well as to the {@code java.library.path} system property. Uses the reflection API to make the field accessible, and may be unsafe in environments with a security policy.
+     */
+    private static void addLibraryPath(final Path path) {
+      final String normalizedPath = path.normalize().toString();
+
+      try {
+        final Field field = ClassLoader.class.getDeclaredField("usr_paths");
+        field.setAccessible(true);
+
+        final Set<String> userPaths = new HashSet<>(Arrays.asList((String[]) field.get(null)));
+        userPaths.add(normalizedPath);
+
+        field.set(null, userPaths.toArray(new String[userPaths.size()]));
+
+        System.setProperty("java.library.path", System.getProperty("java.library.path") + File.pathSeparator + normalizedPath);
+
+        logger.log(Level.FINEST, "System library path now \"{0}\".", System.getProperty("java.library.path"));
+      } catch (IllegalAccessException e) {
+        throw new RuntimeException("Failed to get permissions to set library path");
+      } catch (NoSuchFieldException e) {
+        throw new RuntimeException("Failed to get field handle to set library path");
       }
     }
+
+    /**
+     * Removes the provided {@link Path}, normalized, from the {@link ClassLoader#usr_paths} array, as well as to the {@code java.library.path} system property. Uses the reflection API to make the field accessible, and may be unsafe in environments with a security policy.
+     */
+    private static void removeLibraryPath(final Path path) {
+      final String normalizedPath = path.normalize().toString();
+
+      try {
+        final Field field = ClassLoader.class.getDeclaredField("usr_paths");
+        field.setAccessible(true);
+
+        final Set<String> userPaths = new HashSet<>(Arrays.asList((String[]) field.get(null)));
+        userPaths.remove(normalizedPath);
+
+        field.set(null, userPaths.toArray(new String[userPaths.size()]));
+
+        System.setProperty("java.library.path", System.getProperty("java.library.path").replace(File.pathSeparator + path.normalize().toString(), ""));
+      } catch (IllegalAccessException e) {
+        throw new RuntimeException("Failed to get permissions to set library path");
+      } catch (NoSuchFieldException e) {
+        throw new RuntimeException("Failed to get field handle to set library path");
+      }
+    }
+
   }
 }
