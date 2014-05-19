@@ -56,11 +56,13 @@ static {
 }
 ```
 
-Fortunately, this is unchanged except for one caveat. To use the native libraries included with this package, first call [`nu.pattern.OpenCV.loadLibrary()`](https://github.com/PatternConsulting/opencv/blob/master/src/main/java/nu/pattern/OpenCV.java).
+Fortunately, this is unchanged except for one caveat. To use the native libraries included with this package, first call [`nu.pattern.OpenCV.loadShared()`](https://github.com/PatternConsulting/opencv/blob/master/src/main/java/nu/pattern/OpenCV.java).
 
 This call will first attempt to load from the system-wide installation (exactly as if `System.loadLibrary(org.opencv.core.Core.NATIVE_LIBRARY_NAME);` were called without any preceding steps). If that fails, the loader will select a binary from the package appropriate for the runtime environment's operating system and architecture. It will write that native library to a temporary directory (also defined by the environment), add that directory to `java.library.path`. _This involves writing to disk_, so consider the implications. Temporary files will be garbage-collected on clean shutdown.
 
 This approach keeps most clients decoupled from Pattern's package and loader. As long as this is done sufficiently early in execution, any library using the OpenCV Java bindings can use the usual load call as documented by the OpenCV project.
+
+There are, however, cases where Java class loaders are frequently changing (_e.g._, application servers, SBT projects, Scala worksheets), and [spurious attempts to load the native library will result in JNI errors](https://github.com/PatternConsulting/opencv/issues/7). As a partial work-around, this package offers an alternative API, [`nu.pattern.OpenCV.loadLocal()`](https://github.com/PatternConsulting/opencv/blob/master/src/main/java/nu/pattern/OpenCV.java), which—exactly once per class loader—extracts the binary appropriate for the runtime platform, and passes it to `System#load(String)`. Ultimately, this causes the library to load multiple times in the same JVM, which may not be safe for production use. Use with caution and understand the implications.
 
 ## Debugging
 
