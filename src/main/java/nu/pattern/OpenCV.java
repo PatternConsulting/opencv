@@ -208,6 +208,8 @@ public class OpenCV {
 
     /**
      * Adds the provided {@link Path}, normalized, to the {@link ClassLoader#usr_paths} array, as well as to the {@code java.library.path} system property. Uses the reflection API to make the field accessible, and may be unsafe in environments with a security policy.
+     *
+     * @see <a href="http://stackoverflow.com/q/15409223">Adding new paths for native libraries at runtime in Java</a>
      */
     private static void addLibraryPath(final Path path) {
       final String normalizedPath = path.normalize().toString();
