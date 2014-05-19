@@ -197,7 +197,7 @@
             <!-- Bootstrap the test classes with the extracted library, if applicable. -->
             <property>
               <name>listener</name>
-              <value>nu.pattern.OpenCVRunListener</value>
+              <value>nu.pattern.LoadLibraryRunListener</value>
             </property>
           </properties>
           <!-- It's preferred to keep all upstream resources contained in a single location. Since the test classes use the working directory to find their fixtures, it's necessary to specify this location at test time. -->
