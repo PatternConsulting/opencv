@@ -11,12 +11,12 @@
   </parent>
 
   <packaging>jar</packaging>
-  <groupId>nu.pattern</groupId>
+  <groupId>org.openpnp</groupId>
   <artifactId>opencv</artifactId>
-  <version>2.4.9-7</version>
-  <name>Pattern OpenCV</name>
+  <version>2.4.9-8</version>
+  <name>OpenPnP OpenCV</name>
   <description>OpenCV packaged with native libraries and loader for multiple platforms.</description>
-  <url>http://github.com/patternconsulting/opencv</url>
+  <url>http://github.com/openpnp/opencv</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -74,18 +74,28 @@
   </licenses>
 
   <scm>
-    <url>http://github.com/patternconsulting/opencv</url>
-    <connection>scm:git:http://github.com/patternconsulting/opencv.git</connection>
-    <developerConnection>scm:git:http://github.com/patternconsulting/opencv.git</developerConnection>
+    <url>http://github.com/openpnp/opencv</url>
+    <connection>scm:git:http://github.com/openpnp/opencv.git</connection>
+    <developerConnection>scm:git:http://github.com/openpnp/opencv.git</developerConnection>
     <tag>v2.4.9-3</tag>
   </scm>
 
   <issueManagement>
     <system>GitHub</system>
-    <url>http://github.com/patternconsulting/opencv/issues</url>
+    <url>http://github.com/openpnp/opencv/issues</url>
   </issueManagement>
 
   <developers>
+    <developer>
+      <id>vonnieda</id>
+      <name>Jason von Nieda</name>
+      <email>jason@vonnieda.org</email>
+      <organization>OpenPnP</organization>
+      <organizationUrl>http://openpnp.org</organizationUrl>
+      <roles>
+        <role>maintainer</role>
+      </roles>
+    </developer>
     <developer>
       <id>michaelahlers</id>
       <name>Michael Ahlers</name>
@@ -230,6 +240,39 @@
         </configuration>
       </plugin>
     </plugins>
+    <pluginManagement>
+    	<plugins>
+    		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+    		<plugin>
+    			<groupId>org.eclipse.m2e</groupId>
+    			<artifactId>lifecycle-mapping</artifactId>
+    			<version>1.0.0</version>
+    			<configuration>
+    				<lifecycleMappingMetadata>
+    					<pluginExecutions>
+    						<pluginExecution>
+    							<pluginExecutionFilter>
+    								<groupId>
+    									org.apache.maven.plugins
+    								</groupId>
+    								<artifactId>
+    									maven-antrun-plugin
+    								</artifactId>
+    								<versionRange>[1.3,)</versionRange>
+    								<goals>
+    									<goal>run</goal>
+    								</goals>
+    							</pluginExecutionFilter>
+    							<action>
+    								<ignore></ignore>
+    							</action>
+    						</pluginExecution>
+    					</pluginExecutions>
+    				</lifecycleMappingMetadata>
+    			</configuration>
+    		</plugin>
+    	</plugins>
+    </pluginManagement>
   </build>
 
   <dependencies>

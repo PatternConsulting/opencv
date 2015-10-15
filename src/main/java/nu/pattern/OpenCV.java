@@ -320,6 +320,18 @@ public class OpenCV {
             throw new UnsupportedPlatformException(os, arch);
         }
         break;
+      case WINDOWS:
+          switch (arch) {
+            case X86_32:
+              location = "/nu/pattern/opencv/windows/x86_32/opencv_java249.dll";
+              break;
+            case X86_64:
+              location = "/nu/pattern/opencv/windows/x86_64/opencv_java249.dll";
+              break;
+            default:
+              throw new UnsupportedPlatformException(os, arch);
+          }
+          break;
       default:
         throw new UnsupportedPlatformException(os, arch);
     }
