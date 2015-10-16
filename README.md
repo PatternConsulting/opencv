@@ -48,11 +48,7 @@ Pattern's OpenCV package is added to your project as any other dependency.
     <dependency>
       <groupId>org.openpnp</groupId>
       <artifactId>opencv</artifactId>
-<<<<<<< HEAD
-      <version>2.4.9-8</version>
-=======
-      <version>2.4.11-0</version>
->>>>>>> develop
+      <version>2.4.11-1</version>
     </dependency>
     
     <!-- ... -->
