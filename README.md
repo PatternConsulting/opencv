@@ -1,8 +1,32 @@
-# OpenCV 2.4.9 (packaged by [Pattern](http://pattern.nu))
-
-[![Build Status](https://travis-ci.org/PatternConsulting/opencv.svg?branch=master)](https://travis-ci.org/PatternConsulting/opencv)
+# OpenCV 2.4.11 (packaged by [OpenPnP](http://openpnp.org))
 
 [OpenCV](http://opencv.org) Java bindings packaged with native libraries, seamlessly delivered as a turn-key Maven dependency.
+
+## Fork Notes
+
+### Soft Fork
+
+This is a soft fork of Pattern's OpenCV package at https://github.com/PatternConsulting/opencv.
+That package has not been maintained in quite some time and I needed updated OpenCV
+binaries for OpenPnP. I intend to maintain this fork for the foreseeable future
+or until Pattern resumes maintenance of their package.
+
+### Backwards Compatibility
+
+I have left the source code packages and directories the same (nu.pattern)
+and only changed the Maven coordinates in the pom.xml. This way the package
+remains backwards compatible and it is very easy to switch between the
+OpenPnP version and the Pattern version.
+
+### Maven
+
+To use this fork in your project, instead of the Pattern one, simply add
+the same dependency but with the groupId org.openpnp instead of nu.pattern.
+
+### Scala
+
+I'm not uploading Scala artifacts as I don't know or use Scala. If someone
+wants to maintain that portion of the package, let me know.
 
 ## Usage
 
@@ -22,9 +46,9 @@ Pattern's OpenCV package is added to your project as any other dependency.
     <!-- ... -->
     
     <dependency>
-      <groupId>nu.pattern</groupId>
+      <groupId>org.openpnp</groupId>
       <artifactId>opencv</artifactId>
-      <version>2.4.9-7</version>
+      <version>2.4.11-0</version>
     </dependency>
     
     <!-- ... -->
