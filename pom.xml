@@ -13,7 +13,7 @@
   <packaging>jar</packaging>
   <groupId>org.openpnp</groupId>
   <artifactId>opencv</artifactId>
-  <version>2.4.11-0</version>
+  <version>2.4.11-1</version>
   <name>OpenPnP OpenCV</name>
   <description>OpenCV packaged with native libraries and loader for multiple platforms.</description>
   <url>http://github.com/openpnp/opencv</url>
@@ -77,7 +77,7 @@
     <url>http://github.com/openpnp/opencv</url>
     <connection>scm:git:http://github.com/openpnp/opencv.git</connection>
     <developerConnection>scm:git:http://github.com/openpnp/opencv.git</developerConnection>
-    <tag>v2.4.11-0</tag>
+    <tag>v2.4.11-1</tag>
   </scm>
 
   <issueManagement>
