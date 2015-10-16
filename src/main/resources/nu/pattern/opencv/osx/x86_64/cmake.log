@@ -1,36 +1,73 @@
+-- checking for module 'gstreamer-base-1.0'
+--   package 'gstreamer-base-1.0' not found
+-- checking for module 'gstreamer-video-1.0'
+--   package 'gstreamer-video-1.0' not found
+-- checking for module 'gstreamer-app-1.0'
+--   package 'gstreamer-app-1.0' not found
+-- checking for module 'gstreamer-riff-1.0'
+--   package 'gstreamer-riff-1.0' not found
+-- checking for module 'gstreamer-pbutils-1.0'
+--   package 'gstreamer-pbutils-1.0' not found
+-- checking for module 'gstreamer-base-0.10'
+--   package 'gstreamer-base-0.10' not found
+-- checking for module 'gstreamer-video-0.10'
+--   package 'gstreamer-video-0.10' not found
+-- checking for module 'gstreamer-app-0.10'
+--   package 'gstreamer-app-0.10' not found
+-- checking for module 'gstreamer-riff-0.10'
+--   package 'gstreamer-riff-0.10' not found
+-- checking for module 'gstreamer-pbutils-0.10'
+--   package 'gstreamer-pbutils-0.10' not found
+-- checking for module 'libdc1394-2'
+--   package 'libdc1394-2' not found
+-- checking for module 'libdc1394'
+--   package 'libdc1394' not found
+-- checking for module 'libv4l1'
+--   package 'libv4l1' not found
+-- checking for module 'libv4l2'
+--   package 'libv4l2' not found
 -- Looking for linux/videodev.h
 -- Looking for linux/videodev.h - not found
 -- Looking for linux/videodev2.h
 -- Looking for linux/videodev2.h - not found
 -- Looking for sys/videoio.h
 -- Looking for sys/videoio.h - not found
+-- checking for module 'libavcodec'
+--   package 'libavcodec' not found
+-- checking for module 'libavformat'
+--   package 'libavformat' not found
+-- checking for module 'libavutil'
+--   package 'libavutil' not found
+-- checking for module 'libswscale'
+--   package 'libswscale' not found
 -- Looking for libavformat/avformat.h
 -- Looking for libavformat/avformat.h - not found
 -- Looking for ffmpeg/avformat.h
 -- Looking for ffmpeg/avformat.h - not found
--- Found apache ant 1.8.2: /usr/bin/ant
+-- Could NOT find PythonLibs: Found unsuitable version "2.7.10", but required is exact version "2.7.9" (found /usr/lib/libpython2.7.dylib)
+-- Found apache ant 1.9.4: /usr/local/bin/ant
 -- Assume that non-module dependency is available: -framework OpenCL (for module opencv_ocl)
 -- 
--- General configuration for OpenCV 2.4.9 =====================================
---   Version control:               2.4.9-59-gc9cb480
+-- General configuration for OpenCV 2.4.11 =====================================
+--   Version control:               unknown
 -- 
 --   Platform:
---     Host:                        Darwin 11.4.2 i386
---     CMake:                       2.8.12.2
+--     Host:                        Darwin 14.5.0 x86_64
+--     CMake:                       3.2.2
 --     CMake generator:             Unix Makefiles
 --     CMake build tool:            /usr/bin/make
 --     Configuration:               Release
 -- 
 --   C/C++:
 --     Built as dynamic libs?:      NO
---     C++ Compiler:                /usr/bin/c++  (ver 4.2.0)
---     C++ flags (Release):         -m64 -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
---     C++ flags (Debug):           -m64 -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
---     C Compiler:                  /usr/bin/cc
---     C flags (Release):           -m64 -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
---     C flags (Debug):             -m64 -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
---     Linker flags (Release):      
---     Linker flags (Debug):        
+--     C++ Compiler:                /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  (ver 7.0.0.7000072)
+--     C++ flags (Release):         -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
+--     C++ flags (Debug):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
+--     C Compiler:                  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+--     C flags (Release):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
+--     C flags (Debug):             -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
+--     Linker flags (Release):
+--     Linker flags (Debug):
 --     Precompiled headers:         NO
 -- 
 --   OpenCV modules:
@@ -62,6 +99,7 @@
 --       util:                      NO
 --       swscale:                   NO
 --       gentoo-style:              NO
+--     GStreamer:                   NO
 --     OpenNI:                      NO
 --     OpenNI PrimeSensor Modules:  NO
 --     PvAPI:                       NO
@@ -69,10 +107,11 @@
 --     QuickTime:                   NO
 --     QTKit:                       YES
 --     V4L/V4L2:                    NO/NO
+--     XIMEA:                       NO
 -- 
 --   Other third-party libraries:
 --     Use IPP:                     NO
---     Use Eigen:                   NO
+--     Use Eigen:                   YES (ver 3.2.4)
 --     Use TBB:                     NO
 --     Use OpenMP:                  NO
 --     Use GCD                      YES
@@ -88,20 +127,21 @@
 --     Use AMD BLAS:                NO
 -- 
 --   Python:
---     Interpreter:                 /usr/bin/python (ver 2.7.1)
---     Libraries:                   /usr/lib/libpython2.7.dylib (ver 2.7.1)
---     numpy:                       /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy/core/include (ver 1.5.1)
+--     Interpreter:                 /usr/local/bin/python2 (ver 2.7.9)
+--     Libraries:                   /usr/lib/libpython2.7.dylib (ver 2.7.10)
+--     numpy:                       /usr/local/lib/python2.7/site-packages/numpy/core/include (ver 1.7.1)
 --     packages path:               lib/python2.7/site-packages
 -- 
 --   Java:
---     ant:                         /usr/bin/ant (ver 1.8.2)
---     JNI:                         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/JavaVM.framework/Headers /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/JavaVM.framework/Headers /System/Library/Frameworks/JavaVM.framework/Headers
+--     ant:                         /usr/local/bin/ant (ver 1.9.4)
+--     JNI:                         /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/include /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/include/darwin /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/include
 --     Java tests:                  YES
 -- 
 --   Documentation:
 --     Build Documentation:         NO
 --     Sphinx:                      NO
 --     PdfLaTeX compiler:           NO
+--     Doxygen:                     YES (/Applications/doxygen.app/Contents/MacOS/Doxywizard)
 -- 
 --   Tests and samples:
 --     Tests:                       YES
@@ -110,9 +150,9 @@
 -- 
 --   Install path:                  /usr/local
 -- 
---   cvconfig.h is in:              /Users/user/Projects/itseez-opencv/build
+--   cvconfig.h is in:              /Users/jason/Projects/opencv/opencv-2.4.11/target
 -- -----------------------------------------------------------------
 -- 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/user/Projects/itseez-opencv/build
+-- Build files have been written to: /Users/jason/Projects/opencv/opencv-2.4.11/target
