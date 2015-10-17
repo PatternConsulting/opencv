@@ -40,16 +40,28 @@
 --   package 'libavutil' not found
 -- checking for module 'libswscale'
 --   package 'libswscale' not found
+-- checking for module 'libavresample'
+--   package 'libavresample' not found
 -- Looking for libavformat/avformat.h
 -- Looking for libavformat/avformat.h - not found
 -- Looking for ffmpeg/avformat.h
 -- Looking for ffmpeg/avformat.h - not found
+-- checking for module 'libgphoto2'
+--   package 'libgphoto2' not found
+-- found IPP (ICV version): 8.2.1 [8.2.1]
+-- at: /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.0.0/3rdparty/ippicv/unpack/ippicv_osx
+-- To enable PlantUML support, set PLANTUML_JAR environment variable or pass -DPLANTUML_JAR=<filepath> option to cmake
 -- Could NOT find PythonLibs: Found unsuitable version "2.7.10", but required is exact version "2.7.9" (found /usr/lib/libpython2.7.dylib)
+-- Could NOT find PythonInterp: Found unsuitable version "2.7.9", but required is at least "3.4" (found /usr/local/bin/python)
+-- Could NOT find PythonInterp: Found unsuitable version "2.7.9", but required is at least "3.2" (found /usr/local/bin/python)
 -- Found apache ant 1.9.4: /usr/local/bin/ant
--- Assume that non-module dependency is available: -framework OpenCL (for module opencv_ocl)
+-- Could NOT find Matlab (missing:  MATLAB_MEX_SCRIPT MATLAB_INCLUDE_DIRS MATLAB_ROOT_DIR MATLAB_LIBRARIES MATLAB_LIBRARY_DIRS MATLAB_MEXEXT MATLAB_ARCH MATLAB_BIN) 
+-- VTK is not found. Please set -DVTK_DIR in CMake to VTK build directory, or to VTK install subdirectory with VTKConfig.cmake file
+-- Assume that non-module dependency is available: -framework OpenCL (for module opencv_core)
+--   videoio: Removing WinRT API headers by default
 -- 
--- General configuration for OpenCV 2.4.11 =====================================
---   Version control:               unknown
+-- General configuration for OpenCV 3.0.0 =====================================
+--   Version control:               ba6341f-dirty
 -- 
 --   Platform:
 --     Host:                        Darwin 14.5.0 x86_64
@@ -61,20 +73,22 @@
 --   C/C++:
 --     Built as dynamic libs?:      NO
 --     C++ Compiler:                /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  (ver 7.0.0.7000072)
---     C++ flags (Release):         -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
---     C++ flags (Debug):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
+--     C++ flags (Release):         -fPIC   -fsigned-char -W -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG  -DNDEBUG
+--     C++ flags (Debug):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
 --     C Compiler:                  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
---     C flags (Release):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
---     C flags (Debug):             -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
+--     C flags (Release):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG  -DNDEBUG
+--     C flags (Debug):             -fPIC   -fsigned-char -W -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
 --     Linker flags (Release):
 --     Linker flags (Debug):
 --     Precompiled headers:         NO
+--     Extra dependencies:          -framework OpenCL -framework Cocoa -framework QTKit -framework QuartzCore -framework AppKit stdc++
+--     3rdparty dependencies:       libjpeg libwebp libpng libtiff libjasper IlmImf zlib ippicv
 -- 
 --   OpenCV modules:
---     To be built:                 core flann imgproc highgui features2d calib3d ml video legacy objdetect photo gpu ocl nonfree contrib java python stitching superres ts videostab
+--     To be built:                 hal core flann imgproc ml photo video imgcodecs shape videoio highgui objdetect superres ts features2d calib3d java stitching videostab
 --     Disabled:                    world
 --     Disabled by dependency:      -
---     Unavailable:                 androidcamera dynamicuda viz
+--     Unavailable:                 cudaarithm cudabgsegm cudacodec cudafeatures2d cudafilters cudaimgproc cudalegacy cudaobjdetect cudaoptflow cudastereo cudawarping cudev python2 python3 viz
 -- 
 --   GUI: 
 --     QT:                          NO
@@ -83,12 +97,14 @@
 --     VTK support:                 NO
 -- 
 --   Media I/O: 
---     ZLib:                        build (ver 1.2.7)
---     JPEG:                        build (ver 62)
+--     ZLib:                        build (ver 1.2.8)
+--     JPEG:                        build (ver 90)
+--     WEBP:                        build (ver 0.3.1)
 --     PNG:                         build (ver 1.5.12)
 --     TIFF:                        build (ver 42 - 4.0.2)
 --     JPEG 2000:                   build (ver 1.900.1)
 --     OpenEXR:                     build (ver 1.7.1)
+--     GDAL:                        NO
 -- 
 --   Video I/O:
 --     DC1394 1.x:                  NO
@@ -98,61 +114,72 @@
 --       format:                    NO
 --       util:                      NO
 --       swscale:                   NO
+--       resample:                  NO
 --       gentoo-style:              NO
 --     GStreamer:                   NO
 --     OpenNI:                      NO
 --     OpenNI PrimeSensor Modules:  NO
+--     OpenNI2:                     NO
 --     PvAPI:                       NO
 --     GigEVisionSDK:               NO
 --     QuickTime:                   NO
 --     QTKit:                       YES
 --     V4L/V4L2:                    NO/NO
 --     XIMEA:                       NO
+--     gPhoto2:                     NO
 -- 
 --   Other third-party libraries:
---     Use IPP:                     NO
+--     Use IPP:                     8.2.1 [8.2.1]
+--          at:                     /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.0.0/3rdparty/ippicv/unpack/ippicv_osx
+--     Use IPP Async:               NO
 --     Use Eigen:                   YES (ver 3.2.4)
 --     Use TBB:                     NO
 --     Use OpenMP:                  NO
 --     Use GCD                      YES
 --     Use Concurrency              NO
 --     Use C=:                      NO
+--     Use pthreads for parallel for:
+--                                  NO
 --     Use Cuda:                    NO
 --     Use OpenCL:                  YES
 -- 
 --   OpenCL:
 --     Version:                     static
 --     libraries:                   -framework OpenCL
---     Use AMD FFT:                 NO
---     Use AMD BLAS:                NO
+--     Use AMDFFT:                  NO
+--     Use AMDBLAS:                 NO
 -- 
---   Python:
---     Interpreter:                 /usr/local/bin/python2 (ver 2.7.9)
---     Libraries:                   /usr/lib/libpython2.7.dylib (ver 2.7.10)
---     numpy:                       /usr/local/lib/python2.7/site-packages/numpy/core/include (ver 1.7.1)
---     packages path:               lib/python2.7/site-packages
+--   Python 2:
+--     Interpreter:                 /usr/local/bin/python2.7 (ver 2.7.9)
+-- 
+--   Python 3:
+--     Interpreter:                 NO
+-- 
+--   Python (for build):            /usr/local/bin/python2.7
 -- 
 --   Java:
 --     ant:                         /usr/local/bin/ant (ver 1.9.4)
 --     JNI:                         /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/include /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/include/darwin /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/include
+--     Java wrappers:               YES
 --     Java tests:                  YES
 -- 
+--   Matlab:
+--     mex:                         NO
+-- 
 --   Documentation:
---     Build Documentation:         NO
---     Sphinx:                      NO
---     PdfLaTeX compiler:           NO
---     Doxygen:                     YES (/Applications/doxygen.app/Contents/MacOS/Doxywizard)
+--     Doxygen:                     /Applications/Doxygen.app/Contents/Resources/doxygen (ver 1.7.1)
+--     PlantUML:                    NO
 -- 
 --   Tests and samples:
 --     Tests:                       YES
 --     Performance tests:           YES
 --     C/C++ Examples:              NO
 -- 
---   Install path:                  /usr/local
+--   Install path:                  /Users/jason/Desktop/tmp
 -- 
---   cvconfig.h is in:              /Users/jason/Projects/opencv/opencv-2.4.11/target
+--   cvconfig.h is in:              /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.0.0/target/osx/x86_64
 -- -----------------------------------------------------------------
 -- 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/jason/Projects/opencv/opencv-2.4.11/target
+-- Build files have been written to: /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.0.0/target/osx/x86_64
