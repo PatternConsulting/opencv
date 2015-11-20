@@ -32,7 +32,7 @@ wants to maintain that portion of the package, let me know.
 
 ### Project
 
-Pattern's OpenCV package is added to your project as any other dependency.
+OpenPnP's OpenCV package is added to your project as any other dependency.
 
 #### [Maven](http://maven.apache.org/)
 
@@ -48,7 +48,7 @@ Pattern's OpenCV package is added to your project as any other dependency.
     <dependency>
       <groupId>org.openpnp</groupId>
       <artifactId>opencv</artifactId>
-      <version>2.4.11-1</version>
+      <version>2.4.11-2</version>
     </dependency>
     
     <!-- ... -->
@@ -58,16 +58,6 @@ Pattern's OpenCV package is added to your project as any other dependency.
   <!-- ... -->
   
 </project>
-```
-
-#### [SBT](http://scala-sbt.org)
-
-```scala
-// ...
-
-libraryDependencies += "nu.pattern" % "opencv" % "2.4.9-7"
-
-// ...
 ```
 
 ### API
@@ -117,14 +107,17 @@ OS X | x86_32
 OS X | x86_64
 Linux | x86_64
 Linux | x86_32
+Windows | x86_32
+Windows | x86_64
 
 If you can help create binaries for additional platforms, please see notes under [_Contributing_](#contributing).
 
 ## Credits
 
-This package is maintained by [Michael Ahlers](http://github.com/michaelahlers).
+This package is maintained by [Jason von Nieda](http://github.com/vonnieda).
   
 ## Acknowledgements
 
+- [Michael Ahlers](http://github.com/michaelahlers), for originally creating and maintaining this project.
 - [Greg Borenstein](https://github.com/atduskgreg), who's advice and [OpenCV for Processing](https://github.com/atduskgreg/opencv-processing) project informed this package's development. 
 - [Alex Osborne](https://github.com/ato), for helpful [utility class producing temporary directories with Java NIO that are properly garbage-collected on shutdown](https://gist.github.com/ato/6774390).
