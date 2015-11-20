@@ -48,7 +48,7 @@ OpenPnP's OpenCV package is added to your project as any other dependency.
     <dependency>
       <groupId>org.openpnp</groupId>
       <artifactId>opencv</artifactId>
-      <version>2.4.11-1</version>
+      <version>2.4.11-2</version>
     </dependency>
     
     <!-- ... -->
