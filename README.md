@@ -6,7 +6,7 @@
 
 ## Deprecation Notice
 
-Due to time constraints, this package is not actively maintained. As of December 29, 2015, it's strongly recommended users migrate to [OpenPNP's excellent fork of this project](https://github.com/openpnp/opencv), generously and regularly maintained by [Jason von Nieda](https://github.com/vonnieda).
+Due to time constraints, this package is not actively maintained. As of December 29, 2015, it's strongly recommended users migrate to [OpenPnP's excellent fork of this project](https://github.com/openpnp/opencv), generously and regularly maintained by [Jason von Nieda](https://github.com/vonnieda).
 
 ## Usage
 
