@@ -1,4 +1,4 @@
-# OpenCV 2.4.11 (packaged by [OpenPnP](http://openpnp.org))
+# OpenCV 2.4.13 (packaged by [OpenPnP](http://openpnp.org))
 
 [OpenCV](http://opencv.org) Java bindings packaged with native libraries, seamlessly delivered as a turn-key Maven dependency.
 
@@ -48,7 +48,7 @@ OpenPnP's OpenCV package is added to your project as any other dependency.
     <dependency>
       <groupId>org.openpnp</groupId>
       <artifactId>opencv</artifactId>
-      <version>2.4.11-2</version>
+      <version>2.4.13-0</version>
     </dependency>
     
     <!-- ... -->

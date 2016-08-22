@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.nio.file.AccessDeniedException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -96,11 +97,12 @@ public class OpenCV {
   }
 
   private static class TemporaryDirectory {
+    static final String OPENCV_PREFIX = "opencv_openpnp";
     final Path path;
 
     public TemporaryDirectory() {
       try {
-        path = Files.createTempDirectory("");
+        path = Files.createTempDirectory(OPENCV_PREFIX);
       } catch (IOException e) {
         throw new RuntimeException(e);
       }
@@ -109,6 +111,25 @@ public class OpenCV {
     public Path getPath() {
       return path;
     }
+    
+	public TemporaryDirectory deleteOldInstancesOnStart() {
+		Path tempDirectory = path.getParent();
+
+		for (File file : tempDirectory.toFile().listFiles()) {
+			if (file.isDirectory() && file.getName().startsWith(OPENCV_PREFIX)) {
+				try {
+					delete(file.toPath());
+				} catch (RuntimeException e) {
+					if (e.getCause() instanceof AccessDeniedException) {
+						logger.fine("Failed delete a previous instance of the OpenCV binaries, "
+								+ "likely in use by another program: ");
+					}
+				}
+			}
+		}
+
+		return this;
+	}
 
     public TemporaryDirectory markDeleteOnExit() {
       Runtime.getRuntime().addShutdownHook(new Thread() {
@@ -121,32 +142,34 @@ public class OpenCV {
       return this;
     }
 
+	private void delete(Path path) {
+		if (!Files.exists(path)) {
+			return;
+		}
+
+		try {
+			Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
+				@Override
+				public FileVisitResult postVisitDirectory(final Path dir, final IOException e) throws IOException {
+					Files.deleteIfExists(dir);
+					return super.postVisitDirectory(dir, e);
+				}
+
+				@Override
+				public FileVisitResult visitFile(final Path file, final BasicFileAttributes attrs)
+						throws IOException {
+					Files.deleteIfExists(file);
+					return super.visitFile(file, attrs);
+				}
+			});
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
     public void delete() {
-      if (!Files.exists(path)) {
-        return;
-      }
-
-      try {
-        Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
-          @Override
-          public FileVisitResult postVisitDirectory(final Path dir, final IOException e)
-              throws IOException {
-            Files.deleteIfExists(dir);
-            return super.postVisitDirectory(dir, e);
-          }
-
-          @Override
-          public FileVisitResult visitFile(final Path file, final BasicFileAttributes attrs)
-              throws IOException {
-            Files.deleteIfExists(file);
-            return super.visitFile(file, attrs);
-          }
-        });
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
+      delete(path);
     }
-
   }
 
   /**
@@ -302,10 +325,10 @@ public class OpenCV {
       case LINUX:
         switch (arch) {
           case X86_32:
-            location = "/nu/pattern/opencv/linux/x86_32/libopencv_java2411.so";
+            location = "/nu/pattern/opencv/linux/x86_32/libopencv_java2413.so";
             break;
           case X86_64:
-            location = "/nu/pattern/opencv/linux/x86_64/libopencv_java2411.so";
+            location = "/nu/pattern/opencv/linux/x86_64/libopencv_java2413.so";
             break;
           default:
             throw new UnsupportedPlatformException(os, arch);
@@ -314,7 +337,7 @@ public class OpenCV {
       case OSX:
         switch (arch) {
           case X86_64:
-            location = "/nu/pattern/opencv/osx/x86_64/libopencv_java2411.dylib";
+            location = "/nu/pattern/opencv/osx/x86_64/libopencv_java2413.dylib";
             break;
           default:
             throw new UnsupportedPlatformException(os, arch);
@@ -323,10 +346,10 @@ public class OpenCV {
       case WINDOWS:
           switch (arch) {
             case X86_32:
-              location = "/nu/pattern/opencv/windows/x86_32/opencv_java2411.dll";
+              location = "/nu/pattern/opencv/windows/x86_32/opencv_java2413.dll";
               break;
             case X86_64:
-              location = "/nu/pattern/opencv/windows/x86_64/opencv_java2411.dll";
+              location = "/nu/pattern/opencv/windows/x86_64/opencv_java2413.dll";
               break;
             default:
               throw new UnsupportedPlatformException(os, arch);
@@ -339,8 +362,18 @@ public class OpenCV {
     logger.log(Level.FINEST, "Selected native binary \"{0}\".", location);
 
     final InputStream binary = OpenCV.class.getResourceAsStream(location);
-    final Path destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve("./" + location).normalize();
-
+    final Path destination;
+    
+    // Do not try to delete the temporary directory on the close if Windows
+    // because there will be a write lock on the file which will cause an
+    // AccessDeniedException. Instead, try to delete existing instances of
+    // the temporary directory before extracting.
+    if (OS.WINDOWS.equals(os)) {
+      destination = new TemporaryDirectory().deleteOldInstancesOnStart().getPath().resolve("./" + location).normalize();
+    } else {
+      destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve("./" + location).normalize();
+    }
+	
     try {
       logger.log(Level.FINEST, "Copying native binary to \"{0}\".", destination);
       Files.createDirectories(destination.getParent());
@@ -354,3 +387,4 @@ public class OpenCV {
     return destination;
   }
 }
+
