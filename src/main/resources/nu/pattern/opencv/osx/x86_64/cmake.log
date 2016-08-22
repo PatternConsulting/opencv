@@ -1,3 +1,225 @@
+-- The CXX compiler identification is AppleClang 7.0.0.7000176
+-- The C compiler identification is AppleClang 7.0.0.7000176
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test HAVE_CXX_FSIGNED_CHAR
+-- Performing Test HAVE_CXX_FSIGNED_CHAR - Success
+-- Performing Test HAVE_C_FSIGNED_CHAR
+-- Performing Test HAVE_C_FSIGNED_CHAR - Success
+-- Performing Test HAVE_CXX_W
+-- Performing Test HAVE_CXX_W - Success
+-- Performing Test HAVE_C_W
+-- Performing Test HAVE_C_W - Success
+-- Performing Test HAVE_CXX_WALL
+-- Performing Test HAVE_CXX_WALL - Failed
+-- Performing Test HAVE_C_WALL
+-- Performing Test HAVE_C_WALL - Failed
+-- Performing Test HAVE_CXX_WERROR_RETURN_TYPE
+-- Performing Test HAVE_CXX_WERROR_RETURN_TYPE - Success
+-- Performing Test HAVE_C_WERROR_RETURN_TYPE
+-- Performing Test HAVE_C_WERROR_RETURN_TYPE - Success
+-- Performing Test HAVE_CXX_WERROR_ADDRESS
+-- Performing Test HAVE_CXX_WERROR_ADDRESS - Success
+-- Performing Test HAVE_C_WERROR_ADDRESS
+-- Performing Test HAVE_C_WERROR_ADDRESS - Success
+-- Performing Test HAVE_CXX_WERROR_SEQUENCE_POINT
+-- Performing Test HAVE_CXX_WERROR_SEQUENCE_POINT - Success
+-- Performing Test HAVE_C_WERROR_SEQUENCE_POINT
+-- Performing Test HAVE_C_WERROR_SEQUENCE_POINT - Success
+-- Performing Test HAVE_CXX_WFORMAT
+-- Performing Test HAVE_CXX_WFORMAT - Success
+-- Performing Test HAVE_C_WFORMAT
+-- Performing Test HAVE_C_WFORMAT - Success
+-- Performing Test HAVE_CXX_WERROR_FORMAT_SECURITY
+-- Performing Test HAVE_CXX_WERROR_FORMAT_SECURITY - Success
+-- Performing Test HAVE_C_WERROR_FORMAT_SECURITY
+-- Performing Test HAVE_C_WERROR_FORMAT_SECURITY - Success
+-- Performing Test HAVE_CXX_WMISSING_DECLARATIONS
+-- Performing Test HAVE_CXX_WMISSING_DECLARATIONS - Success
+-- Performing Test HAVE_C_WMISSING_DECLARATIONS
+-- Performing Test HAVE_C_WMISSING_DECLARATIONS - Success
+-- Performing Test HAVE_CXX_WMISSING_PROTOTYPES
+-- Performing Test HAVE_CXX_WMISSING_PROTOTYPES - Success
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES - Success
+-- Performing Test HAVE_CXX_WSTRICT_PROTOTYPES
+-- Performing Test HAVE_CXX_WSTRICT_PROTOTYPES - Success
+-- Performing Test HAVE_C_WSTRICT_PROTOTYPES
+-- Performing Test HAVE_C_WSTRICT_PROTOTYPES - Success
+-- Performing Test HAVE_CXX_WUNDEF
+-- Performing Test HAVE_CXX_WUNDEF - Success
+-- Performing Test HAVE_C_WUNDEF
+-- Performing Test HAVE_C_WUNDEF - Success
+-- Performing Test HAVE_CXX_WINIT_SELF
+-- Performing Test HAVE_CXX_WINIT_SELF - Success
+-- Performing Test HAVE_C_WINIT_SELF
+-- Performing Test HAVE_C_WINIT_SELF - Success
+-- Performing Test HAVE_CXX_WPOINTER_ARITH
+-- Performing Test HAVE_CXX_WPOINTER_ARITH - Success
+-- Performing Test HAVE_C_WPOINTER_ARITH
+-- Performing Test HAVE_C_WPOINTER_ARITH - Success
+-- Performing Test HAVE_CXX_WSHADOW
+-- Performing Test HAVE_CXX_WSHADOW - Success
+-- Performing Test HAVE_C_WSHADOW
+-- Performing Test HAVE_C_WSHADOW - Success
+-- Performing Test HAVE_CXX_WSIGN_PROMO
+-- Performing Test HAVE_CXX_WSIGN_PROMO - Success
+-- Performing Test HAVE_C_WSIGN_PROMO
+-- Performing Test HAVE_C_WSIGN_PROMO - Success
+-- Performing Test HAVE_CXX_WNO_NARROWING
+-- Performing Test HAVE_CXX_WNO_NARROWING - Success
+-- Performing Test HAVE_C_WNO_NARROWING
+-- Performing Test HAVE_C_WNO_NARROWING - Success
+-- Performing Test HAVE_CXX_WNO_DELETE_NON_VIRTUAL_DTOR
+-- Performing Test HAVE_CXX_WNO_DELETE_NON_VIRTUAL_DTOR - Success
+-- Performing Test HAVE_C_WNO_DELETE_NON_VIRTUAL_DTOR
+-- Performing Test HAVE_C_WNO_DELETE_NON_VIRTUAL_DTOR - Success
+-- Performing Test HAVE_CXX_WNO_UNNAMED_TYPE_TEMPLATE_ARGS
+-- Performing Test HAVE_CXX_WNO_UNNAMED_TYPE_TEMPLATE_ARGS - Success
+-- Performing Test HAVE_C_WNO_UNNAMED_TYPE_TEMPLATE_ARGS
+-- Performing Test HAVE_C_WNO_UNNAMED_TYPE_TEMPLATE_ARGS - Success
+-- Performing Test HAVE_CXX_WNO_ARRAY_BOUNDS
+-- Performing Test HAVE_CXX_WNO_ARRAY_BOUNDS - Success
+-- Performing Test HAVE_C_WNO_ARRAY_BOUNDS
+-- Performing Test HAVE_C_WNO_ARRAY_BOUNDS - Success
+-- Performing Test HAVE_CXX_WNO_AGGRESSIVE_LOOP_OPTIMIZATIONS
+-- Performing Test HAVE_CXX_WNO_AGGRESSIVE_LOOP_OPTIMIZATIONS - Failed
+-- Performing Test HAVE_C_WNO_AGGRESSIVE_LOOP_OPTIMIZATIONS
+-- Performing Test HAVE_C_WNO_AGGRESSIVE_LOOP_OPTIMIZATIONS - Failed
+-- Performing Test HAVE_CXX_FDIAGNOSTICS_SHOW_OPTION
+-- Performing Test HAVE_CXX_FDIAGNOSTICS_SHOW_OPTION - Success
+-- Performing Test HAVE_C_FDIAGNOSTICS_SHOW_OPTION
+-- Performing Test HAVE_C_FDIAGNOSTICS_SHOW_OPTION - Success
+-- Performing Test HAVE_CXX_WNO_LONG_LONG
+-- Performing Test HAVE_CXX_WNO_LONG_LONG - Success
+-- Performing Test HAVE_C_WNO_LONG_LONG
+-- Performing Test HAVE_C_WNO_LONG_LONG - Success
+-- Performing Test HAVE_CXX_WNO_SEMICOLON_BEFORE_METHOD_BODY
+-- Performing Test HAVE_CXX_WNO_SEMICOLON_BEFORE_METHOD_BODY - Success
+-- Performing Test HAVE_C_WNO_SEMICOLON_BEFORE_METHOD_BODY
+-- Performing Test HAVE_C_WNO_SEMICOLON_BEFORE_METHOD_BODY - Success
+-- Performing Test HAVE_CXX_FNO_OMIT_FRAME_POINTER
+-- Performing Test HAVE_CXX_FNO_OMIT_FRAME_POINTER - Success
+-- Performing Test HAVE_C_FNO_OMIT_FRAME_POINTER
+-- Performing Test HAVE_C_FNO_OMIT_FRAME_POINTER - Success
+-- Performing Test HAVE_CXX_MSSE
+-- Performing Test HAVE_CXX_MSSE - Success
+-- Performing Test HAVE_C_MSSE
+-- Performing Test HAVE_C_MSSE - Success
+-- Performing Test HAVE_CXX_MSSE2
+-- Performing Test HAVE_CXX_MSSE2 - Success
+-- Performing Test HAVE_C_MSSE2
+-- Performing Test HAVE_C_MSSE2 - Success
+-- Performing Test HAVE_CXX_MSSE3
+-- Performing Test HAVE_CXX_MSSE3 - Success
+-- Performing Test HAVE_C_MSSE3
+-- Performing Test HAVE_C_MSSE3 - Success
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of unsigned short
+-- Check size of unsigned short - done
+-- Using unsigned short
+-- Check if the system is big endian - little endian
+-- Looking for fseeko
+-- Looking for fseeko - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Check size of off64_t
+-- Check size of off64_t - failed
+-- Performing Test HAVE_C_WNO_SHORTEN_64_TO_32
+-- Performing Test HAVE_C_WNO_SHORTEN_64_TO_32 - Success
+-- Performing Test HAVE_C_WNO_ATTRIBUTES
+-- Performing Test HAVE_C_WNO_ATTRIBUTES - Success
+-- Performing Test HAVE_C_WNO_STRICT_PROTOTYPES
+-- Performing Test HAVE_C_WNO_STRICT_PROTOTYPES - Success
+-- Performing Test HAVE_C_WNO_MISSING_PROTOTYPES
+-- Performing Test HAVE_C_WNO_MISSING_PROTOTYPES - Success
+-- Performing Test HAVE_C_WNO_MISSING_DECLARATIONS
+-- Performing Test HAVE_C_WNO_MISSING_DECLARATIONS - Success
+-- Performing Test HAVE_C_WNO_SHIFT_NEGATIVE_VALUE
+-- Performing Test HAVE_C_WNO_SHIFT_NEGATIVE_VALUE - Failed
+-- Looking for assert.h
+-- Looking for assert.h - found
+-- Looking for fcntl.h
+-- Looking for fcntl.h - found
+-- Looking for io.h
+-- Looking for io.h - not found
+-- Looking for jbg_newlen
+-- Looking for jbg_newlen - not found
+-- Looking for mmap
+-- Looking for mmap - found
+-- Looking for search.h
+-- Looking for search.h - found
+-- Looking for string.h
+-- Looking for string.h - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_VARIABLE
+-- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_VARIABLE - Failed
+-- Performing Test HAVE_C_WNO_UNDEF
+-- Performing Test HAVE_C_WNO_UNDEF - Success
+-- Performing Test HAVE_C_WNO_UNUSED
+-- Performing Test HAVE_C_WNO_UNUSED - Success
+-- Performing Test HAVE_C_WNO_SIGN_COMPARE
+-- Performing Test HAVE_C_WNO_SIGN_COMPARE - Success
+-- Performing Test HAVE_C_WNO_CAST_ALIGN
+-- Performing Test HAVE_C_WNO_CAST_ALIGN - Success
+-- Performing Test HAVE_C_WNO_SHADOW
+-- Performing Test HAVE_C_WNO_SHADOW - Success
+-- Performing Test HAVE_C_WNO_MAYBE_UNINITIALIZED
+-- Performing Test HAVE_C_WNO_MAYBE_UNINITIALIZED - Failed
+-- Performing Test HAVE_C_WNO_POINTER_TO_INT_CAST
+-- Performing Test HAVE_C_WNO_POINTER_TO_INT_CAST - Success
+-- Performing Test HAVE_C_WNO_INT_TO_POINTER_CAST
+-- Performing Test HAVE_C_WNO_INT_TO_POINTER_CAST - Success
+-- Performing Test HAVE_C_WNO_UNUSED_PARAMETER
+-- Performing Test HAVE_C_WNO_UNUSED_PARAMETER - Success
+-- Performing Test HAVE_CXX_WNO_MISSING_DECLARATIONS
+-- Performing Test HAVE_CXX_WNO_MISSING_DECLARATIONS - Success
+-- Performing Test HAVE_CXX_WNO_UNUSED_PARAMETER
+-- Performing Test HAVE_CXX_WNO_UNUSED_PARAMETER - Success
+-- Performing Test HAVE_C_WNO_IMPLICIT_FUNCTION_DECLARATION
+-- Performing Test HAVE_C_WNO_IMPLICIT_FUNCTION_DECLARATION - Success
+-- Performing Test HAVE_C_WNO_UNINITIALIZED
+-- Performing Test HAVE_C_WNO_UNINITIALIZED - Success
+-- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_PARAMETER
+-- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_PARAMETER - Failed
+-- Looking for semaphore.h
+-- Looking for semaphore.h - found
+-- Performing Test HAVE_CXX_WNO_SHADOW
+-- Performing Test HAVE_CXX_WNO_SHADOW - Success
+-- Performing Test HAVE_CXX_WNO_UNUSED
+-- Performing Test HAVE_CXX_WNO_UNUSED - Success
+-- Performing Test HAVE_CXX_WNO_SIGN_COMPARE
+-- Performing Test HAVE_CXX_WNO_SIGN_COMPARE - Success
+-- Performing Test HAVE_CXX_WNO_UNDEF
+-- Performing Test HAVE_CXX_WNO_UNDEF - Success
+-- Performing Test HAVE_CXX_WNO_UNINITIALIZED
+-- Performing Test HAVE_CXX_WNO_UNINITIALIZED - Success
+-- Performing Test HAVE_CXX_WNO_SWITCH
+-- Performing Test HAVE_CXX_WNO_SWITCH - Success
+-- Performing Test HAVE_CXX_WNO_PARENTHESES
+-- Performing Test HAVE_CXX_WNO_PARENTHESES - Success
+-- Performing Test HAVE_CXX_WNO_EXTRA
+-- Performing Test HAVE_CXX_WNO_EXTRA - Success
+-- Performing Test HAVE_CXX_WNO_DEPRECATED_DECLARATIONS
+-- Performing Test HAVE_CXX_WNO_DEPRECATED_DECLARATIONS - Success
 -- checking for module 'gstreamer-base-1.0'
 --   package 'gstreamer-base-1.0' not found
 -- checking for module 'gstreamer-video-1.0'
@@ -40,32 +262,40 @@
 --   package 'libavutil' not found
 -- checking for module 'libswscale'
 --   package 'libswscale' not found
+-- checking for module 'libavresample'
+--   package 'libavresample' not found
 -- Looking for libavformat/avformat.h
 -- Looking for libavformat/avformat.h - not found
 -- Looking for ffmpeg/avformat.h
 -- Looking for ffmpeg/avformat.h - not found
--- Could NOT find PythonLibs: Found unsuitable version "2.7.10", but required is exact version "2.7.9" (found /usr/lib/libpython2.7.dylib)
--- Found apache ant 1.9.4: /usr/local/bin/ant
+-- Found PythonInterp: /usr/local/bin/python2 (found suitable version "2.7.11", minimum required is "2.0") 
+-- Could NOT find PythonLibs: Found unsuitable version "2.7.10", but required is exact version "2.7.11" (found /usr/lib/libpython2.7.dylib)
+-- Found apache ant 1.9.7: /usr/local/bin/ant
+-- Found JNI: /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/jre/lib/libjawt.dylib  
 -- Assume that non-module dependency is available: -framework OpenCL (for module opencv_ocl)
+-- Performing Test HAVE_OBJCXX_FOBJC_EXCEPTIONS
+-- Performing Test HAVE_OBJCXX_FOBJC_EXCEPTIONS - Success
+-- Performing Test HAVE_CXX_WNO_CLOBBERED
+-- Performing Test HAVE_CXX_WNO_CLOBBERED - Failed
 -- 
--- General configuration for OpenCV 2.4.11 =====================================
---   Version control:               unknown
+-- General configuration for OpenCV 2.4.13 =====================================
+--   Version control:               8f9fe92-dirty
 -- 
 --   Platform:
---     Host:                        Darwin 14.5.0 x86_64
---     CMake:                       3.2.2
+--     Host:                        Darwin 15.6.0 x86_64
+--     CMake:                       3.5.2
 --     CMake generator:             Unix Makefiles
 --     CMake build tool:            /usr/bin/make
 --     Configuration:               Release
 -- 
 --   C/C++:
 --     Built as dynamic libs?:      NO
---     C++ Compiler:                /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  (ver 7.0.0.7000072)
---     C++ flags (Release):         -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
---     C++ flags (Debug):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
+--     C++ Compiler:                /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  (ver 7.0.0.7000176)
+--     C++ flags (Release):         -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-array-bounds -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
+--     C++ flags (Debug):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-array-bounds -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
 --     C Compiler:                  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
---     C flags (Release):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
---     C flags (Debug):             -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
+--     C flags (Release):           -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-array-bounds -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -O3 -DNDEBUG  -DNDEBUG
+--     C flags (Debug):             -fPIC   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-array-bounds -fdiagnostics-show-option -Wno-long-long -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -msse3 -g  -O0 -DDEBUG -D_DEBUG
 --     Linker flags (Release):
 --     Linker flags (Debug):
 --     Precompiled headers:         NO
@@ -98,6 +328,7 @@
 --       format:                    NO
 --       util:                      NO
 --       swscale:                   NO
+--       resample:                  NO
 --       gentoo-style:              NO
 --     GStreamer:                   NO
 --     OpenNI:                      NO
@@ -111,7 +342,7 @@
 -- 
 --   Other third-party libraries:
 --     Use IPP:                     NO
---     Use Eigen:                   YES (ver 3.2.4)
+--     Use Eigen:                   YES (ver 3.2.8)
 --     Use TBB:                     NO
 --     Use OpenMP:                  NO
 --     Use GCD                      YES
@@ -127,13 +358,13 @@
 --     Use AMD BLAS:                NO
 -- 
 --   Python:
---     Interpreter:                 /usr/local/bin/python2 (ver 2.7.9)
+--     Interpreter:                 /usr/local/bin/python2 (ver 2.7.11)
 --     Libraries:                   /usr/lib/libpython2.7.dylib (ver 2.7.10)
---     numpy:                       /usr/local/lib/python2.7/site-packages/numpy/core/include (ver 1.7.1)
+--     numpy:                       /usr/local/lib/python2.7/site-packages/numpy/core/include (ver 1.11.1)
 --     packages path:               lib/python2.7/site-packages
 -- 
 --   Java:
---     ant:                         /usr/local/bin/ant (ver 1.9.4)
+--     ant:                         /usr/local/bin/ant (ver 1.9.7)
 --     JNI:                         /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/include /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/include/darwin /Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/include
 --     Java tests:                  YES
 -- 
@@ -141,7 +372,7 @@
 --     Build Documentation:         NO
 --     Sphinx:                      NO
 --     PdfLaTeX compiler:           NO
---     Doxygen:                     YES (/Applications/doxygen.app/Contents/MacOS/Doxywizard)
+--     Doxygen:                     NO
 -- 
 --   Tests and samples:
 --     Tests:                       YES
@@ -150,9 +381,9 @@
 -- 
 --   Install path:                  /usr/local
 -- 
---   cvconfig.h is in:              /Users/jason/Projects/opencv/opencv-2.4.11/target
+--   cvconfig.h is in:              /Users/jason/Projects/openpnp/opencv/opencv/opencv-2.4.13/target/osx/x86_64
 -- -----------------------------------------------------------------
 -- 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/jason/Projects/opencv/opencv-2.4.11/target
+-- Build files have been written to: /Users/jason/Projects/openpnp/opencv/opencv/opencv-2.4.13/target/osx/x86_64
