@@ -15,6 +15,28 @@
 * On 32 bit: `jason@ubuntu:/usr/lib/jvm/default-java/include$ sudo ln -s linux/jni_md.h jni_md.h` Seems that cmake didn't detect the include/linux directory for some reason.
 * OpenCV built in tests would not pass in 32 bit. Failures seemed centered around the calib3d module. Releasing anyway as our library tests were passing, so perhaps this will still be useful to some people.
 
+#### Ubuntu 14.04.5 Attempt
+* Due to https://github.com/openpnp/opencv/issues/10, attempting to rebuild on Ubuntu 14.04.5 for better libstdc++ compatibility.
+* HGFS seems to be just completely broken, so instead of switching back and forth between the VM and the host we're goign to build everything for the Linux parts in the VM and check it into Github and then finish the process in OS X.
+* With a fresh 14.04.5 install:
+```
+sudo apt update -y
+sudo apt full-upgrade -y
+sudo reboot
+sudo apt install default-jdk ant maven git cmake g++ -y
+git clone https://github.com/openpnp/opencv.git
+cd opencv; mkdir opencv; cd opencv
+wget https://github.com/opencv/opencv/archive/3.2.0.zip
+unzip opencv-3.2.0.zip
+cd ..
+./create-targets.sh 3.2.0
+cd opencv/opencv-3.2.0/target/linux/x86_64
+cmake -DBUILD_SHARED_LIBS=OFF ../../.. > cmake.log
+make -j8
+```
+
+
+
 ### 3.0.0
 
 * OS X Tests are currently failing due to https://github.com/Itseez/opencv/issues/5030
