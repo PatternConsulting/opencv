@@ -2,6 +2,19 @@
 
 ## Version Notes
 
+### 3.2.0
+
+#### Linux
+* Built on Ubuntu 16.04.1
+* Was having problems with HGFS, solved with: http://askubuntu.com/questions/591664/files-missing-in-mnt-hgfs-on-ubuntu-vm
+* sudo apt install default-jdk ant maven git cmake -y
+* git clone https://github.com/rasa/vmware-tools-patches.git
+* cd vmware-tools-patches
+* ./patched-open-vm-tools.sh
+* Getting seemingly random missing separator errors when making. Seems random because just running make again sometimes goes further. Was able to finally build by using `until make; do echo; done` which is absurd but it worked, so it's not absurd. Could be that this is due to unzipping on OS X, but the line endings should be the same.
+* On 32 bit: `jason@ubuntu:/usr/lib/jvm/default-java/include$ sudo ln -s linux/jni_md.h jni_md.h` Seems that cmake didn't detect the include/linux directory for some reason.
+* OpenCV built in tests would not pass in 32 bit. Failures seemed centered around the calib3d module. Releasing anyway as our library tests were passing, so perhaps this will still be useful to some people.
+
 ### 3.0.0
 
 * OS X Tests are currently failing due to https://github.com/Itseez/opencv/issues/5030
