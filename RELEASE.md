@@ -11,7 +11,7 @@
 sudo apt-get update && sudo apt-get install oracle-java8-jdk cmake ant
 sudo apt-get install build-essential cmake pkg-config libpng12-0 libpng12-dev libpng++-dev libpng3 libpnglite-dev zlib1g-dbg zlib1g zlib1g-dev pngtools  libtiff4 libtiffxx0c2 libtiff-tools libjpeg8 libjpeg8-dev libjpeg8-dbg libjpeg-progs libavcodec-dev   libavformat-dev libgstreamer0.10-0-dbg libgstreamer0.10-0 libgstreamer0.10-dev  libunicap2 libunicap2-dev libdc1394-22-dev libdc1394-22 libdc1394-utils swig libv4l-0 libv4l-dev
 ```
-*Change .bashrc to set JAVA_HOME, ANT_HOME and paths:
+* Change .bashrc to set JAVA_HOME, ANT_HOME and paths:
 
 ```
 export ANT_HOME=/usr/share/ant/
@@ -20,7 +20,7 @@ export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/
 export PATH=$PATH:$JAVA_HOME/bin
 ```
 
-*Download opencv:
+* Download opencv:
 
 ```
 wget https://github.com/opencv/opencv/archive/3.2.0.zip
@@ -29,7 +29,7 @@ unzip opencv.zip
 cd opencv-3.2.0/
 ```
 
-*Finally build using cmake:
+* Finally build using cmake:
 ```
 mkdir build
 cd build
@@ -38,7 +38,7 @@ make
 make install
 ```
 
-*libopencv_java320.so can now be found in build/libs 
+* libopencv_java320.so can now be found in build/libs 
 
 
 #### Linux
