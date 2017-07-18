@@ -24,6 +24,8 @@ public class OpenCV {
 
   private final static Logger logger = Logger.getLogger(OpenCV.class.getName());
 
+
+
   static enum OS {
     OSX("^[Mm]ac OS X$"),
     LINUX("^[Ll]inux$"),
@@ -64,7 +66,8 @@ public class OpenCV {
 
   static enum Arch {
     X86_32("i386", "i686", "x86"),
-    X86_64("amd64", "x86_64");
+    X86_64("amd64", "x86_64"),
+	  ARMv8("arm");
 
     private final Set<String> patterns;
 
@@ -111,7 +114,7 @@ public class OpenCV {
     public Path getPath() {
       return path;
     }
-    
+
 	public TemporaryDirectory deleteOldInstancesOnStart() {
 		Path tempDirectory = path.getParent();
 
@@ -330,6 +333,9 @@ public class OpenCV {
           case X86_64:
             location = "/nu/pattern/opencv/linux/x86_64/libopencv_java320.so";
             break;
+          case ARMv8:
+              location = "/nu/pattern/opencv/linux/ARMv8/libopencv_java320.so";
+              break;
           default:
             throw new UnsupportedPlatformException(os, arch);
         }
@@ -363,7 +369,7 @@ public class OpenCV {
 
     final InputStream binary = OpenCV.class.getResourceAsStream(location);
     final Path destination;
-    
+
     // Do not try to delete the temporary directory on the close if Windows
     // because there will be a write lock on the file which will cause an
     // AccessDeniedException. Instead, try to delete existing instances of
@@ -373,7 +379,7 @@ public class OpenCV {
     } else {
       destination = new TemporaryDirectory().markDeleteOnExit().getPath().resolve("./" + location).normalize();
     }
-	
+
     try {
       logger.log(Level.FINEST, "Copying native binary to \"{0}\".", destination);
       Files.createDirectories(destination.getParent());
@@ -387,4 +393,3 @@ public class OpenCV {
     return destination;
   }
 }
-
