@@ -10,6 +10,7 @@ mkdir $BASE_DIR/target
 mkdir $BASE_DIR/target/linux
 mkdir $BASE_DIR/target/linux/x86_32
 mkdir $BASE_DIR/target/linux/x86_64
+mkdir $BASE_DIR/target/linux/ARMv8
 mkdir $BASE_DIR/target/osx
 mkdir $BASE_DIR/target/osx/x86_64
 mkdir $BASE_DIR/target/windows

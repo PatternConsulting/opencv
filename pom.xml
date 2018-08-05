@@ -7,7 +7,7 @@
   <packaging>bundle</packaging>
   <groupId>org.openpnp</groupId>
   <artifactId>opencv</artifactId>
-  <version>3.2.0-1</version>
+  <version>3.4.2-0</version>
   <name>OpenPnP OpenCV</name>
   <description>OpenCV packaged with native libraries and loader for multiple platforms.</description>
   <url>http://github.com/openpnp/opencv</url>
@@ -158,7 +158,7 @@
             <configuration>
               <tasks>
                 <echo>Extracting Java classes.</echo>
-                <unjar src="${project.basedir}/upstream/opencv-320.jar" dest="${project.build.directory}/classes">
+                <unjar src="${project.basedir}/upstream/opencv-342.jar" dest="${project.build.directory}/classes">
                   <patternset>
                     <include name="**/*.class"/>
                   </patternset>
@@ -172,7 +172,7 @@
                 </unjar>
 
                 <echo>Extracting Java sources.</echo>
-                <unjar src="${project.basedir}/upstream/opencv-320.jar" dest="${project.build.directory}/upstream-sources">
+                <unjar src="${project.basedir}/upstream/opencv-342.jar" dest="${project.build.directory}/upstream-sources">
                   <patternset>
                     <include name="**/*.java"/>
                   </patternset>

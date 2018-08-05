@@ -8,7 +8,13 @@
 -- Check for working C compiler: /usr/bin/cc -- works
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Detected version of GNU GCC: 48 (408)
+-- Performing Test HAVE_CXX11 (check file: cmake/checks/cxx11.cpp)
+-- Performing Test HAVE_CXX11 - Failed
+-- Found PythonInterp: /usr/bin/python2.7 (found suitable version "2.7.6", minimum required is "2.7") 
+-- Could NOT find PythonLibs (missing:  PYTHON_LIBRARIES PYTHON_INCLUDE_DIRS) (Required is exact version "2.7.6")
+-- Found PythonInterp: /usr/bin/python3.4 (found suitable version "3.4.3", minimum required is "3.4") 
+-- Could NOT find PythonLibs (missing:  PYTHON_LIBRARIES PYTHON_INCLUDE_DIRS) (Required is exact version "3.4.3")
+-- Looking for ccache - not found
 -- Performing Test HAVE_CXX_FSIGNED_CHAR
 -- Performing Test HAVE_CXX_FSIGNED_CHAR - Success
 -- Performing Test HAVE_C_FSIGNED_CHAR
@@ -77,6 +83,10 @@
 -- Performing Test HAVE_CXX_WSIGN_PROMO - Success
 -- Performing Test HAVE_C_WSIGN_PROMO
 -- Performing Test HAVE_C_WSIGN_PROMO - Failed
+-- Performing Test HAVE_CXX_WUNINITIALIZED
+-- Performing Test HAVE_CXX_WUNINITIALIZED - Success
+-- Performing Test HAVE_C_WUNINITIALIZED
+-- Performing Test HAVE_C_WUNINITIALIZED - Success
 -- Performing Test HAVE_CXX_WNO_NARROWING
 -- Performing Test HAVE_CXX_WNO_NARROWING - Success
 -- Performing Test HAVE_C_WNO_NARROWING
@@ -101,50 +111,50 @@
 -- Performing Test HAVE_CXX_PTHREAD - Success
 -- Performing Test HAVE_C_PTHREAD
 -- Performing Test HAVE_C_PTHREAD - Success
--- Performing Test HAVE_CXX_MARCH_I686
--- Performing Test HAVE_CXX_MARCH_I686 - Success
--- Performing Test HAVE_C_MARCH_I686
--- Performing Test HAVE_C_MARCH_I686 - Success
 -- Performing Test HAVE_CXX_FOMIT_FRAME_POINTER
 -- Performing Test HAVE_CXX_FOMIT_FRAME_POINTER - Success
 -- Performing Test HAVE_C_FOMIT_FRAME_POINTER
 -- Performing Test HAVE_C_FOMIT_FRAME_POINTER - Success
--- Performing Test HAVE_CXX_MSSE
--- Performing Test HAVE_CXX_MSSE - Success
--- Performing Test HAVE_C_MSSE
--- Performing Test HAVE_C_MSSE - Success
--- Performing Test HAVE_CXX_MSSE2
--- Performing Test HAVE_CXX_MSSE2 - Success
--- Performing Test HAVE_C_MSSE2
--- Performing Test HAVE_C_MSSE2 - Success
--- Performing Test HAVE_CXX_MNO_AVX
--- Performing Test HAVE_CXX_MNO_AVX - Success
--- Performing Test HAVE_C_MNO_AVX
--- Performing Test HAVE_C_MNO_AVX - Success
--- Performing Test HAVE_CXX_MSSE3
--- Performing Test HAVE_CXX_MSSE3 - Success
--- Performing Test HAVE_C_MSSE3
--- Performing Test HAVE_C_MSSE3 - Success
--- Performing Test HAVE_CXX_MNO_SSSE3
--- Performing Test HAVE_CXX_MNO_SSSE3 - Success
--- Performing Test HAVE_C_MNO_SSSE3
--- Performing Test HAVE_C_MNO_SSSE3 - Success
--- Performing Test HAVE_CXX_MNO_SSE4_1
--- Performing Test HAVE_CXX_MNO_SSE4_1 - Success
--- Performing Test HAVE_C_MNO_SSE4_1
--- Performing Test HAVE_C_MNO_SSE4_1 - Success
--- Performing Test HAVE_CXX_MNO_SSE4_2
--- Performing Test HAVE_CXX_MNO_SSE4_2 - Success
--- Performing Test HAVE_C_MNO_SSE4_2
--- Performing Test HAVE_C_MNO_SSE4_2 - Success
--- Performing Test HAVE_CXX_MFPMATH_SSE
--- Performing Test HAVE_CXX_MFPMATH_SSE - Success
--- Performing Test HAVE_C_MFPMATH_SSE
--- Performing Test HAVE_C_MFPMATH_SSE - Success
 -- Performing Test HAVE_CXX_FFUNCTION_SECTIONS
 -- Performing Test HAVE_CXX_FFUNCTION_SECTIONS - Success
 -- Performing Test HAVE_C_FFUNCTION_SECTIONS
 -- Performing Test HAVE_C_FFUNCTION_SECTIONS - Success
+-- Performing Test HAVE_CXX_FDATA_SECTIONS
+-- Performing Test HAVE_CXX_FDATA_SECTIONS - Success
+-- Performing Test HAVE_C_FDATA_SECTIONS
+-- Performing Test HAVE_C_FDATA_SECTIONS - Success
+-- Performing Test HAVE_CXX_MSSE (check file: cmake/checks/cpu_sse.cpp)
+-- Performing Test HAVE_CXX_MSSE - Success
+-- Performing Test HAVE_CXX_MSSE2 (check file: cmake/checks/cpu_sse2.cpp)
+-- Performing Test HAVE_CXX_MSSE2 - Success
+-- Performing Test HAVE_CXX_MSSE3 (check file: cmake/checks/cpu_sse3.cpp)
+-- Performing Test HAVE_CXX_MSSE3 - Success
+-- Performing Test HAVE_CXX_MSSSE3 (check file: cmake/checks/cpu_ssse3.cpp)
+-- Performing Test HAVE_CXX_MSSSE3 - Success
+-- Performing Test HAVE_CXX_MSSE4_1 (check file: cmake/checks/cpu_sse41.cpp)
+-- Performing Test HAVE_CXX_MSSE4_1 - Success
+-- Performing Test HAVE_CXX_MPOPCNT (check file: cmake/checks/cpu_popcnt.cpp)
+-- Performing Test HAVE_CXX_MPOPCNT - Success
+-- Performing Test HAVE_CXX_MSSE4_2 (check file: cmake/checks/cpu_sse42.cpp)
+-- Performing Test HAVE_CXX_MSSE4_2 - Success
+-- Performing Test HAVE_CXX_MF16C (check file: cmake/checks/cpu_fp16.cpp)
+-- Performing Test HAVE_CXX_MF16C - Success
+-- Performing Test HAVE_CXX_MAVX (check file: cmake/checks/cpu_avx.cpp)
+-- Performing Test HAVE_CXX_MAVX - Success
+-- Performing Test HAVE_CPU_BASELINE_FLAGS
+-- Performing Test HAVE_CPU_BASELINE_FLAGS - Success
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_SSE4_1
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_SSE4_1 - Success
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_SSE4_2
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_SSE4_2 - Success
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_FP16
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_FP16 - Success
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_AVX
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_AVX - Success
+-- Performing Test HAVE_CXX_MFPMATH_SSE
+-- Performing Test HAVE_CXX_MFPMATH_SSE - Success
+-- Performing Test HAVE_C_MFPMATH_SSE
+-- Performing Test HAVE_C_MFPMATH_SSE - Success
 -- Performing Test HAVE_CXX_FVISIBILITY_HIDDEN
 -- Performing Test HAVE_CXX_FVISIBILITY_HIDDEN - Success
 -- Performing Test HAVE_C_FVISIBILITY_HIDDEN
@@ -153,9 +163,14 @@
 -- Performing Test HAVE_CXX_FVISIBILITY_INLINES_HIDDEN - Success
 -- Performing Test HAVE_C_FVISIBILITY_INLINES_HIDDEN
 -- Performing Test HAVE_C_FVISIBILITY_INLINES_HIDDEN - Failed
--- FP16: Feature disabled
 -- Looking for pthread.h
 -- Looking for pthread.h - found
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for malloc.h
+-- Looking for malloc.h - found
+-- Looking for memalign
+-- Looking for memalign - found
 -- Check if the system is big endian
 -- Searching 16 bit integer
 -- Looking for sys/types.h
@@ -187,31 +202,115 @@
 -- Performing Test HAVE_C_WNO_MISSING_DECLARATIONS - Success
 -- Performing Test HAVE_C_WNO_SHIFT_NEGATIVE_VALUE
 -- Performing Test HAVE_C_WNO_SHIFT_NEGATIVE_VALUE - Failed
+-- Performing Test HAVE_C_WNO_UNDEF
+-- Performing Test HAVE_C_WNO_UNDEF - Success
+-- Performing Test HAVE_C_WNO_IMPLICIT_FALLTHROUGH
+-- Performing Test HAVE_C_WNO_IMPLICIT_FALLTHROUGH - Failed
+-- Could NOT find JPEG (missing:  JPEG_LIBRARY JPEG_INCLUDE_DIR) 
+-- Performing Test HAVE_C_WNO_UNUSED_PARAMETER
+-- Performing Test HAVE_C_WNO_UNUSED_PARAMETER - Success
+-- Performing Test HAVE_C_WNO_SIGN_COMPARE
+-- Performing Test HAVE_C_WNO_SIGN_COMPARE - Success
+-- libjpeg-turbo: VERSION = 1.5.3, BUILD = opencv-3.4.2-libjpeg-turbo
+-- Check size of size_t
+-- Check size of size_t - done
 -- Could NOT find TIFF (missing:  TIFF_LIBRARY TIFF_INCLUDE_DIR) 
 -- Looking for assert.h
 -- Looking for assert.h - found
+-- Looking for dlfcn.h
+-- Looking for dlfcn.h - found
 -- Looking for fcntl.h
 -- Looking for fcntl.h - found
+-- Looking for inttypes.h
+-- Looking for inttypes.h - found
 -- Looking for io.h
 -- Looking for io.h - not found
--- Looking for jbg_newlen
--- Looking for jbg_newlen - not found
--- Looking for mmap
--- Looking for mmap - found
+-- Looking for limits.h
+-- Looking for limits.h - found
+-- Looking for memory.h
+-- Looking for memory.h - found
 -- Looking for search.h
 -- Looking for search.h - found
 -- Looking for string.h
 -- Looking for string.h - found
+-- Looking for strings.h
+-- Looking for strings.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
 -- Looking for unistd.h
 -- Looking for unistd.h - found
+-- Performing Test C_HAS_inline
+-- Performing Test C_HAS_inline - Success
+-- Check size of signed short
+-- Check size of signed short - done
+-- Check size of unsigned short
+-- Check size of unsigned short - done
+-- Check size of signed int
+-- Check size of signed int - done
+-- Check size of unsigned int
+-- Check size of unsigned int - done
+-- Check size of signed long
+-- Check size of signed long - done
+-- Check size of unsigned long
+-- Check size of unsigned long - done
+-- Check size of signed long long
+-- Check size of signed long long - done
+-- Check size of unsigned long long
+-- Check size of unsigned long long - done
+-- Check size of unsigned char *
+-- Check size of unsigned char * - done
+-- Check size of ptrdiff_t
+-- Check size of ptrdiff_t - done
+-- Check size of INT8
+-- Check size of INT8 - failed
+-- Check size of INT16
+-- Check size of INT16 - failed
+-- Check size of INT32
+-- Check size of INT32 - failed
+-- Looking for floor
+-- Looking for floor - found
+-- Looking for pow
+-- Looking for pow - found
+-- Looking for sqrt
+-- Looking for sqrt - found
+-- Looking for isascii
+-- Looking for isascii - found
+-- Looking for memset
+-- Looking for memset - found
+-- Looking for mmap
+-- Looking for mmap - found
+-- Looking for getopt
+-- Looking for getopt - found
+-- Looking for memmove
+-- Looking for memmove - found
+-- Looking for setmode
+-- Looking for setmode - not found
+-- Looking for strcasecmp
+-- Looking for strcasecmp - found
+-- Looking for strchr
+-- Looking for strchr - found
+-- Looking for strrchr
+-- Looking for strrchr - found
+-- Looking for strstr
+-- Looking for strstr - found
+-- Looking for strtol
+-- Looking for strtol - found
+-- Looking for strtol
+-- Looking for strtol - found
+-- Looking for strtoull
+-- Looking for strtoull - found
+-- Looking for lfind
+-- Looking for lfind - found
+-- Performing Test HAVE_SNPRINTF
+-- Performing Test HAVE_SNPRINTF - Success
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Using unsigned short
+-- Check if the system is big endian - little endian
 -- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_VARIABLE
 -- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_VARIABLE - Success
--- Performing Test HAVE_C_WNO_UNDEF
--- Performing Test HAVE_C_WNO_UNDEF - Success
 -- Performing Test HAVE_C_WNO_UNUSED
 -- Performing Test HAVE_C_WNO_UNUSED - Success
--- Performing Test HAVE_C_WNO_SIGN_COMPARE
--- Performing Test HAVE_C_WNO_SIGN_COMPARE - Success
 -- Performing Test HAVE_C_WNO_CAST_ALIGN
 -- Performing Test HAVE_C_WNO_CAST_ALIGN - Success
 -- Performing Test HAVE_C_WNO_SHADOW
@@ -224,18 +323,17 @@
 -- Performing Test HAVE_C_WNO_INT_TO_POINTER_CAST - Success
 -- Performing Test HAVE_C_WNO_MISLEADING_INDENTATION
 -- Performing Test HAVE_C_WNO_MISLEADING_INDENTATION - Failed
--- Performing Test HAVE_C_WNO_UNUSED_PARAMETER
--- Performing Test HAVE_C_WNO_UNUSED_PARAMETER - Success
 -- Performing Test HAVE_CXX_WNO_MISSING_DECLARATIONS
 -- Performing Test HAVE_CXX_WNO_MISSING_DECLARATIONS - Success
 -- Performing Test HAVE_CXX_WNO_UNUSED_PARAMETER
 -- Performing Test HAVE_CXX_WNO_UNUSED_PARAMETER - Success
--- Could NOT find JPEG (missing:  JPEG_LIBRARY JPEG_INCLUDE_DIR) 
+-- Performing Test HAVE_CXX_WNO_UNDEF
+-- Performing Test HAVE_CXX_WNO_UNDEF - Success
 -- Performing Test HAVE_C_WNO_UNUSED_VARIABLE
 -- Performing Test HAVE_C_WNO_UNUSED_VARIABLE - Success
 -- Performing Test HAVE_C_WNO_UNUSED_FUNCTION
 -- Performing Test HAVE_C_WNO_UNUSED_FUNCTION - Success
--- Found JPEG: libjpeg  
+-- Found JPEG: libjpeg-turbo  
 -- Could NOT find Jasper (missing:  JASPER_LIBRARIES JASPER_INCLUDE_DIR) 
 -- Performing Test HAVE_C_WNO_IMPLICIT_FUNCTION_DECLARATION
 -- Performing Test HAVE_C_WNO_IMPLICIT_FUNCTION_DECLARATION - Success
@@ -245,7 +343,11 @@
 -- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_PARAMETER - Success
 -- Performing Test HAVE_C_WNO_STRICT_OVERFLOW
 -- Performing Test HAVE_C_WNO_STRICT_OVERFLOW - Success
--- Could NOT find ZLIB (missing:  ZLIB_INCLUDE_DIR) (found version "1.2.8")
+-- Performing Test HAVE_C_WNO_POINTER_COMPARE
+-- Performing Test HAVE_C_WNO_POINTER_COMPARE - Failed
+-- Performing Test HAVE_C_WNO_ABSOLUTE_VALUE
+-- Performing Test HAVE_C_WNO_ABSOLUTE_VALUE - Failed
+-- Could NOT find ZLIB (missing:  ZLIB_INCLUDE_DIR) (found version "1.2.11")
 -- Could NOT find PNG (missing:  PNG_LIBRARY PNG_PNG_INCLUDE_DIR) 
 -- Looking for semaphore.h
 -- Looking for semaphore.h - found
@@ -255,8 +357,6 @@
 -- Performing Test HAVE_CXX_WNO_UNUSED - Success
 -- Performing Test HAVE_CXX_WNO_SIGN_COMPARE
 -- Performing Test HAVE_CXX_WNO_SIGN_COMPARE - Success
--- Performing Test HAVE_CXX_WNO_UNDEF
--- Performing Test HAVE_CXX_WNO_UNDEF - Success
 -- Performing Test HAVE_CXX_WNO_UNINITIALIZED
 -- Performing Test HAVE_CXX_WNO_UNINITIALIZED - Success
 -- Performing Test HAVE_CXX_WNO_SWITCH
@@ -271,6 +371,14 @@
 -- Performing Test HAVE_CXX_WNO_DEPRECATED_DECLARATIONS - Success
 -- Performing Test HAVE_CXX_WNO_MISLEADING_INDENTATION
 -- Performing Test HAVE_CXX_WNO_MISLEADING_INDENTATION - Failed
+-- Performing Test HAVE_CXX_WNO_DEPRECATED
+-- Performing Test HAVE_CXX_WNO_DEPRECATED - Success
+-- Performing Test HAVE_CXX_WNO_SUGGEST_OVERRIDE
+-- Performing Test HAVE_CXX_WNO_SUGGEST_OVERRIDE - Failed
+-- Performing Test HAVE_CXX_WNO_INCONSISTENT_MISSING_OVERRIDE
+-- Performing Test HAVE_CXX_WNO_INCONSISTENT_MISSING_OVERRIDE - Failed
+-- Performing Test HAVE_CXX_WNO_IMPLICIT_FALLTHROUGH
+-- Performing Test HAVE_CXX_WNO_IMPLICIT_FALLTHROUGH - Failed
 -- checking for module 'gtk+-3.0'
 --   package 'gtk+-3.0' not found
 -- checking for module 'gtk+-2.0'
@@ -316,82 +424,128 @@
 --   package 'libavresample' not found
 -- checking for module 'libgphoto2'
 --   package 'libgphoto2' not found
--- ICV: Downloading ippicv_linux_20151201.tgz...
--- ICV: Unpacking ippicv_linux_20151201.tgz to /home/jason/opencv/opencv/opencv-3.2.0/target/linux/x86_32/3rdparty/ippicv...
--- ICV: Package successfully downloaded
--- found IPP (ICV version): 9.0.1 [9.0.1]
--- at: /home/jason/opencv/opencv/opencv-3.2.0/target/linux/x86_32/3rdparty/ippicv/ippicv_lnx
+-- IPPICV: Download: ippicv_2017u3_lnx_ia32_general_20180518.tgz
+-- found Intel IPP (ICV version): 2017.0.3 [2017.0.3]
+-- at: /home/osboxes/opencv/opencv/opencv-3.4.2/target/linux/x86_32/3rdparty/ippicv/ippicv_lnx
+-- found Intel IPP IW sources: 2017.0.3
+-- at: /home/osboxes/opencv/opencv/opencv-3.4.2/target/linux/x86_32/3rdparty/ippicv/ippiw_lnx
 -- Could not find OpenBLAS include. Turning OpenBLAS_FOUND off
 -- Could not find OpenBLAS lib. Turning OpenBLAS_FOUND off
 -- Could NOT find Atlas (missing:  Atlas_CBLAS_INCLUDE_DIR Atlas_CLAPACK_INCLUDE_DIR Atlas_CBLAS_LIBRARY Atlas_BLAS_LIBRARY Atlas_LAPACK_LIBRARY) 
--- Could NOT find Doxygen (missing:  DOXYGEN_EXECUTABLE) 
--- Found PythonInterp: /usr/bin/python2.7 (found suitable version "2.7.6", minimum required is "2.7") 
--- Could NOT find PythonLibs (missing:  PYTHON_LIBRARIES PYTHON_INCLUDE_DIRS) (Required is exact version "2.7.6")
--- Found PythonInterp: /usr/bin/python3.4 (found suitable version "3.4.3", minimum required is "3.4") 
--- Could NOT find PythonLibs (missing:  PYTHON_LIBRARIES PYTHON_INCLUDE_DIRS) (Required is exact version "3.4.3")
--- Found apache ant 1.9.3: /usr/bin/ant
+-- Looking for include file pthread.h
+-- Looking for include file pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - found
+-- Found Threads: TRUE  
+-- A library with BLAS API not found. Please specify library location.
+-- LAPACK requires BLAS
+-- A library with LAPACK API not found. Please specify library location.
+-- Performing Test HAVE_CXX_WNO_MISSING_PROTOTYPES
+-- Performing Test HAVE_CXX_WNO_MISSING_PROTOTYPES - Failed
+-- Performing Test HAVE_CXX_WNO_UNUSED_LOCAL_TYPEDEFS
+-- Performing Test HAVE_CXX_WNO_UNUSED_LOCAL_TYPEDEFS - Success
+-- Performing Test HAVE_CXX_WNO_SIGN_PROMO
+-- Performing Test HAVE_CXX_WNO_SIGN_PROMO - Success
+-- Performing Test HAVE_CXX_WNO_TAUTOLOGICAL_UNDEFINED_COMPARE
+-- Performing Test HAVE_CXX_WNO_TAUTOLOGICAL_UNDEFINED_COMPARE - Failed
+-- Performing Test HAVE_CXX_WNO_IGNORED_QUALIFIERS
+-- Performing Test HAVE_CXX_WNO_IGNORED_QUALIFIERS - Success
+-- Performing Test HAVE_CXX_WNO_UNUSED_FUNCTION
+-- Performing Test HAVE_CXX_WNO_UNUSED_FUNCTION - Success
+-- Performing Test HAVE_CXX_WNO_UNUSED_CONST_VARIABLE
+-- Performing Test HAVE_CXX_WNO_UNUSED_CONST_VARIABLE - Failed
+-- Performing Test HAVE_CXX_WNO_SHORTEN_64_TO_32
+-- Performing Test HAVE_CXX_WNO_SHORTEN_64_TO_32 - Failed
+-- Performing Test HAVE_CXX_WNO_INVALID_OFFSETOF
+-- Performing Test HAVE_CXX_WNO_INVALID_OFFSETOF - Success
+-- Performing Test HAVE_CXX_WNO_ENUM_COMPARE_SWITCH
+-- Performing Test HAVE_CXX_WNO_ENUM_COMPARE_SWITCH - Failed
+-- Found apache ant: /usr/bin/ant (1.9.3)
 -- Found JNI: /usr/lib/jvm/default-java/jre/lib/i386/libjawt.so  
 -- Could NOT find Matlab (missing:  MATLAB_MEX_SCRIPT MATLAB_INCLUDE_DIRS MATLAB_ROOT_DIR MATLAB_LIBRARIES MATLAB_LIBRARY_DIRS MATLAB_MEXEXT MATLAB_ARCH MATLAB_BIN) 
 -- VTK is not found. Please set -DVTK_DIR in CMake to VTK build directory, or to VTK install subdirectory with VTKConfig.cmake file
--- Performing Test HAVE_CXX_WNO_UNUSED_CONST_VARIABLE
--- Performing Test HAVE_CXX_WNO_UNUSED_CONST_VARIABLE - Failed
+-- Looking for dlerror in dl
+-- Looking for dlerror in dl - found
+-- Excluding from source files list: modules/core/src/convert.avx2.cpp
+-- Excluding from source files list: modules/imgproc/src/undistort.avx2.cpp
+-- Excluding from source files list: modules/imgproc/src/resize.avx2.cpp
+-- Excluding from source files list: modules/imgproc/src/filter.avx2.cpp
+-- Excluding from source files list: modules/imgproc/src/imgwarp.avx2.cpp
+-- Performing Test HAVE_CXX_WNO_MAYBE_UNINITIALIZED
+-- Performing Test HAVE_CXX_WNO_MAYBE_UNINITIALIZED - Success
+-- Performing Test HAVE_CXX_WNO_ERROR_NON_VIRTUAL_DTOR
+-- Performing Test HAVE_CXX_WNO_ERROR_NON_VIRTUAL_DTOR - Success
+-- Performing Test HAVE_CXX_WNO_ENUM_COMPARE
+-- Performing Test HAVE_CXX_WNO_ENUM_COMPARE - Success
+-- Excluding from source files list: <BUILD>/modules/dnn/layers/layers_common.avx2.cpp
+-- Excluding from source files list: <BUILD>/modules/dnn/layers/layers_common.avx512_skx.cpp
+-- Excluding from source files list: modules/features2d/src/fast.avx2.cpp
 -- Performing Test HAVE_CXX_WNO_OVERLOADED_VIRTUAL
 -- Performing Test HAVE_CXX_WNO_OVERLOADED_VIRTUAL - Success
 -- 
--- General configuration for OpenCV 3.2.0 =====================================
---   Version control:               fe2d69c
+-- General configuration for OpenCV 3.4.2 =====================================
+--   Version control:               a25eb08
 -- 
 --   Platform:
---     Timestamp:                   2016-12-27T17:44:30Z
---     Host:                        Linux 4.4.0-57-generic i686
+--     Timestamp:                   2018-08-05T00:38:33Z
+--     Host:                        Linux 4.4.0-131-generic i686
 --     CMake:                       2.8.12.2
 --     CMake generator:             Unix Makefiles
 --     CMake build tool:            /usr/bin/make
 --     Configuration:               Release
 -- 
+--   CPU/HW features:
+--     Baseline:                    SSE SSE2
+--       requested:                 SSE2
+--     Dispatched code generation:  SSE4_1 SSE4_2 FP16 AVX
+--       requested:                 SSE4_1 SSE4_2 AVX FP16
+--       SSE4_1 (3 files):          + SSE3 SSSE3 SSE4_1
+--       SSE4_2 (1 files):          + SSE3 SSSE3 SSE4_1 POPCNT SSE4_2
+--       FP16 (2 files):            + SSE3 SSSE3 SSE4_1 POPCNT SSE4_2 FP16 AVX
+--       AVX (5 files):             + SSE3 SSSE3 SSE4_1 POPCNT SSE4_2 AVX
+-- 
 --   C/C++:
 --     Built as dynamic libs?:      NO
 --     C++ Compiler:                /usr/bin/c++  (ver 4.8.4)
---     C++ flags (Release):         -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -fdiagnostics-show-option -pthread -march=i686 -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -mfpmath=sse -ffunction-sections -fvisibility=hidden -fvisibility-inlines-hidden -O2 -DNDEBUG  -DNDEBUG
---     C++ flags (Debug):           -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -fdiagnostics-show-option -pthread -march=i686 -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -mfpmath=sse -ffunction-sections -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
+--     C++ flags (Release):         -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -mfpmath=sse -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG  -DNDEBUG
+--     C++ flags (Debug):           -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -mfpmath=sse -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
 --     C Compiler:                  /usr/bin/cc
---     C flags (Release):           -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -Wno-comment -fdiagnostics-show-option -pthread -march=i686 -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -mfpmath=sse -ffunction-sections -fvisibility=hidden -O2 -DNDEBUG  -DNDEBUG
---     C flags (Debug):             -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -Wno-comment -fdiagnostics-show-option -pthread -march=i686 -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -mfpmath=sse -ffunction-sections -fvisibility=hidden -g  -O0 -DDEBUG -D_DEBUG
+--     C flags (Release):           -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -mfpmath=sse -fvisibility=hidden -O3 -DNDEBUG  -DNDEBUG
+--     C flags (Debug):             -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -msse -msse2 -mfpmath=sse -fvisibility=hidden -g  -O0 -DDEBUG -D_DEBUG
 --     Linker flags (Release):      
 --     Linker flags (Debug):        
 --     ccache:                      NO
 --     Precompiled headers:         YES
---     Extra dependencies:          stdc++ dl m pthread rt
---     3rdparty dependencies:       zlib libjpeg libwebp libpng libtiff libjasper IlmImf ippicv
+--     Extra dependencies:          dl m pthread rt
+--     3rdparty dependencies:       libprotobuf ittnotify zlib libjpeg-turbo libwebp libpng libtiff libjasper IlmImf ippiw ippicv
 -- 
 --   OpenCV modules:
---     To be built:                 core flann imgproc ml photo video imgcodecs shape videoio highgui objdetect superres ts features2d calib3d java stitching videostab
---     Disabled:                    world
+--     To be built:                 calib3d core dnn features2d flann highgui imgcodecs imgproc java java_bindings_generator ml objdetect photo python_bindings_generator shape stitching superres ts video videoio videostab
+--     Disabled:                    js world
 --     Disabled by dependency:      -
 --     Unavailable:                 cudaarithm cudabgsegm cudacodec cudafeatures2d cudafilters cudaimgproc cudalegacy cudaobjdetect cudaoptflow cudastereo cudawarping cudev python2 python3 viz
+--     Applications:                tests perf_tests apps
+--     Documentation:               NO
+--     Non-free algorithms:         NO
 -- 
 --   GUI: 
---     QT:                          NO
 --     GTK+:                        NO
---     GThread :                    NO
---     GtkGlExt:                    NO
---     OpenGL support:              NO
 --     VTK support:                 NO
 -- 
 --   Media I/O: 
---     ZLib:                        zlib (ver 1.2.8)
---     JPEG:                        libjpeg (ver 90)
---     WEBP:                        build (ver 0.3.1)
---     PNG:                         build (ver 1.6.24)
---     TIFF:                        build (ver 42 - 4.0.2)
+--     ZLib:                        build (ver 1.2.11)
+--     JPEG:                        libjpeg-turbo (ver 1.5.3-62)
+--     WEBP:                        build (ver encoder: 0x020e)
+--     PNG:                         build (ver 1.6.34)
+--     TIFF:                        build (ver 42 - 4.0.9)
 --     JPEG 2000:                   build (ver 1.900.1)
 --     OpenEXR:                     build (ver 1.7.1)
---     GDAL:                        NO
---     GDCM:                        NO
+--     HDR:                         YES
+--     SUNRASTER:                   YES
+--     PXM:                         YES
 -- 
 --   Video I/O:
---     DC1394 1.x:                  NO
---     DC1394 2.x:                  NO
+--     DC1394:                      NO
 --     FFMPEG:                      NO
 --       avcodec:                   NO
 --       avformat:                  NO
@@ -399,68 +553,41 @@
 --       swscale:                   NO
 --       avresample:                NO
 --     GStreamer:                   NO
---     OpenNI:                      NO
---     OpenNI PrimeSensor Modules:  NO
---     OpenNI2:                     NO
---     PvAPI:                       NO
---     GigEVisionSDK:               NO
---     Aravis SDK:                  NO
---     UniCap:                      NO
---     UniCap ucil:                 NO
---     V4L/V4L2:                    NO/YES
---     XIMEA:                       NO
---     Xine:                        NO
+--     libv4l/libv4l2:              NO
+--     v4l/v4l2:                    linux/videodev2.h
 --     gPhoto2:                     NO
 -- 
 --   Parallel framework:            pthreads
 -- 
+--   Trace:                         YES (with Intel ITT)
+-- 
 --   Other third-party libraries:
---     Use IPP:                     9.0.1 [9.0.1]
---          at:                     /home/jason/opencv/opencv/opencv-3.2.0/target/linux/x86_32/3rdparty/ippicv/ippicv_lnx
---     Use IPP Async:               NO
---     Use VA:                      NO
---     Use Intel VA-API/OpenCL:     NO
---     Use Lapack:                  NO
---     Use Eigen:                   NO
---     Use Cuda:                    NO
---     Use OpenCL:                  YES
---     Use OpenVX:                  NO
---     Use custom HAL:              NO
+--     Intel IPP:                   2017.0.3 [2017.0.3]
+--            at:                   /home/osboxes/opencv/opencv/opencv-3.4.2/target/linux/x86_32/3rdparty/ippicv/ippicv_lnx
+--     Intel IPP IW:                sources (2017.0.3)
+--               at:                /home/osboxes/opencv/opencv/opencv-3.4.2/target/linux/x86_32/3rdparty/ippicv/ippiw_lnx
+--     Lapack:                      NO
+--     Eigen:                       NO
+--     Custom HAL:                  NO
+--     Protobuf:                    build (3.5.1)
 -- 
---   OpenCL:                        <Dynamic loading of OpenCL library>
---     Include path:                /home/jason/opencv/opencv/opencv-3.2.0/3rdparty/include/opencl/1.2
---     Use AMDFFT:                  NO
---     Use AMDBLAS:                 NO
--- 
---   Python 2:
---     Interpreter:                 /usr/bin/python2.7 (ver 2.7.6)
--- 
---   Python 3:
---     Interpreter:                 /usr/bin/python3.4 (ver 3.4.3)
+--   OpenCL:                        YES (no extra features)
+--     Include path:                /home/osboxes/opencv/opencv/opencv-3.4.2/3rdparty/include/opencl/1.2
+--     Link libraries:              Dynamic load
 -- 
 --   Python (for build):            /usr/bin/python2.7
 -- 
---   Java:
+--   Java:                          
 --     ant:                         /usr/bin/ant (ver 1.9.3)
 --     JNI:                         /usr/lib/jvm/default-java/include /usr/lib/jvm/default-java/include /usr/lib/jvm/default-java/include
 --     Java wrappers:               YES
 --     Java tests:                  YES
 -- 
---   Matlab:                        Matlab not found or implicitly disabled
+--   Matlab:                        NO
 -- 
---   Documentation:
---     Doxygen:                     NO
--- 
---   Tests and samples:
---     Tests:                       YES
---     Performance tests:           YES
---     C/C++ Examples:              NO
--- 
---   Install path:                  /usr/local
--- 
---   cvconfig.h is in:              /home/jason/opencv/opencv/opencv-3.2.0/target/linux/x86_32
+--   Install to:                    /usr/local
 -- -----------------------------------------------------------------
 -- 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/jason/opencv/opencv/opencv-3.2.0/target/linux/x86_32
+-- Build files have been written to: /home/osboxes/opencv/opencv/opencv-3.4.2/target/linux/x86_32
