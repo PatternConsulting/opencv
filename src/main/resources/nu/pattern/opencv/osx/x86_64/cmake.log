@@ -1,5 +1,5 @@
--- The CXX compiler identification is AppleClang 8.0.0.8000042
--- The C compiler identification is AppleClang 8.0.0.8000042
+-- The CXX compiler identification is AppleClang 9.1.0.9020039
+-- The C compiler identification is AppleClang 9.1.0.9020039
 -- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
 -- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -- works
 -- Detecting CXX compiler ABI info
@@ -12,6 +12,13 @@
 -- Detecting C compiler ABI info - done
 -- Detecting C compile features
 -- Detecting C compile features - done
+-- Performing Test HAVE_CXX11 (check file: cmake/checks/cxx11.cpp)
+-- Performing Test HAVE_CXX11 - Failed
+-- Found PythonInterp: /usr/bin/python2.7 (found suitable version "2.7.10", minimum required is "2.7") 
+-- Found PythonLibs: /usr/lib/libpython2.7.dylib (found suitable exact version "2.7.10") 
+-- Could NOT find PythonInterp: Found unsuitable version "1.4", but required is at least "3.4" (found /Users/jason/.pyenv/shims/python3.4)
+-- Could NOT find PythonInterp: Found unsuitable version "1.4", but required is at least "3.2" (found /Users/jason/.pyenv/shims/python3.4)
+-- Looking for ccache - not found
 -- Performing Test HAVE_CXX_FSIGNED_CHAR
 -- Performing Test HAVE_CXX_FSIGNED_CHAR - Success
 -- Performing Test HAVE_C_FSIGNED_CHAR
@@ -80,6 +87,10 @@
 -- Performing Test HAVE_CXX_WSIGN_PROMO - Success
 -- Performing Test HAVE_C_WSIGN_PROMO
 -- Performing Test HAVE_C_WSIGN_PROMO - Success
+-- Performing Test HAVE_CXX_WUNINITIALIZED
+-- Performing Test HAVE_CXX_WUNINITIALIZED - Success
+-- Performing Test HAVE_C_WUNINITIALIZED
+-- Performing Test HAVE_C_WUNINITIALIZED - Success
 -- Performing Test HAVE_CXX_WNO_NARROWING
 -- Performing Test HAVE_CXX_WNO_NARROWING - Success
 -- Performing Test HAVE_C_WNO_NARROWING
@@ -112,38 +123,66 @@
 -- Performing Test HAVE_CXX_WNO_SEMICOLON_BEFORE_METHOD_BODY - Success
 -- Performing Test HAVE_C_WNO_SEMICOLON_BEFORE_METHOD_BODY
 -- Performing Test HAVE_C_WNO_SEMICOLON_BEFORE_METHOD_BODY - Success
--- Performing Test HAVE_CXX_FNO_OMIT_FRAME_POINTER
--- Performing Test HAVE_CXX_FNO_OMIT_FRAME_POINTER - Success
--- Performing Test HAVE_C_FNO_OMIT_FRAME_POINTER
--- Performing Test HAVE_C_FNO_OMIT_FRAME_POINTER - Success
--- Performing Test HAVE_CXX_MSSE
--- Performing Test HAVE_CXX_MSSE - Success
--- Performing Test HAVE_C_MSSE
--- Performing Test HAVE_C_MSSE - Success
--- Performing Test HAVE_CXX_MSSE2
--- Performing Test HAVE_CXX_MSSE2 - Success
--- Performing Test HAVE_C_MSSE2
--- Performing Test HAVE_C_MSSE2 - Success
--- Performing Test HAVE_CXX_MNO_AVX
--- Performing Test HAVE_CXX_MNO_AVX - Success
--- Performing Test HAVE_C_MNO_AVX
--- Performing Test HAVE_C_MNO_AVX - Success
--- Performing Test HAVE_CXX_MSSE3
--- Performing Test HAVE_CXX_MSSE3 - Success
--- Performing Test HAVE_C_MSSE3
--- Performing Test HAVE_C_MSSE3 - Success
--- Performing Test HAVE_CXX_MNO_SSSE3
--- Performing Test HAVE_CXX_MNO_SSSE3 - Success
--- Performing Test HAVE_C_MNO_SSSE3
--- Performing Test HAVE_C_MNO_SSSE3 - Success
--- Performing Test HAVE_CXX_MNO_SSE4_1
--- Performing Test HAVE_CXX_MNO_SSE4_1 - Success
--- Performing Test HAVE_C_MNO_SSE4_1
--- Performing Test HAVE_C_MNO_SSE4_1 - Success
--- Performing Test HAVE_CXX_MNO_SSE4_2
--- Performing Test HAVE_CXX_MNO_SSE4_2 - Success
--- Performing Test HAVE_C_MNO_SSE4_2
--- Performing Test HAVE_C_MNO_SSE4_2 - Success
+-- Performing Test HAVE_CXX_FFUNCTION_SECTIONS
+-- Performing Test HAVE_CXX_FFUNCTION_SECTIONS - Success
+-- Performing Test HAVE_C_FFUNCTION_SECTIONS
+-- Performing Test HAVE_C_FFUNCTION_SECTIONS - Success
+-- Performing Test HAVE_CXX_FDATA_SECTIONS
+-- Performing Test HAVE_CXX_FDATA_SECTIONS - Success
+-- Performing Test HAVE_C_FDATA_SECTIONS
+-- Performing Test HAVE_C_FDATA_SECTIONS - Success
+-- Performing Test HAVE_CPU_SSE_SUPPORT (check file: cmake/checks/cpu_sse.cpp)
+-- Performing Test HAVE_CPU_SSE_SUPPORT - Success
+-- Performing Test HAVE_CPU_SSE2_SUPPORT (check file: cmake/checks/cpu_sse2.cpp)
+-- Performing Test HAVE_CPU_SSE2_SUPPORT - Success
+-- Performing Test HAVE_CPU_SSE3_SUPPORT (check file: cmake/checks/cpu_sse3.cpp)
+-- Performing Test HAVE_CPU_SSE3_SUPPORT - Success
+-- Performing Test HAVE_CPU_SSSE3_SUPPORT (check file: cmake/checks/cpu_ssse3.cpp)
+-- Performing Test HAVE_CPU_SSSE3_SUPPORT - Success
+-- Performing Test HAVE_CPU_SSE4_1_SUPPORT (check file: cmake/checks/cpu_sse41.cpp)
+-- Performing Test HAVE_CPU_SSE4_1_SUPPORT - Success
+-- Performing Test HAVE_CPU_POPCNT_SUPPORT (check file: cmake/checks/cpu_popcnt.cpp)
+-- Performing Test HAVE_CPU_POPCNT_SUPPORT - Failed
+-- Performing Test HAVE_CXX_MPOPCNT (check file: cmake/checks/cpu_popcnt.cpp)
+-- Performing Test HAVE_CXX_MPOPCNT - Success
+-- Performing Test HAVE_CPU_SSE4_2_SUPPORT (check file: cmake/checks/cpu_sse42.cpp)
+-- Performing Test HAVE_CPU_SSE4_2_SUPPORT - Failed
+-- Performing Test HAVE_CXX_MSSE4_2 (check file: cmake/checks/cpu_sse42.cpp)
+-- Performing Test HAVE_CXX_MSSE4_2 - Success
+-- Performing Test HAVE_CPU_FP16_SUPPORT (check file: cmake/checks/cpu_fp16.cpp)
+-- Performing Test HAVE_CPU_FP16_SUPPORT - Failed
+-- Performing Test HAVE_CXX_MF16C (check file: cmake/checks/cpu_fp16.cpp)
+-- Performing Test HAVE_CXX_MF16C - Success
+-- Performing Test HAVE_CXX_MFMA
+-- Performing Test HAVE_CXX_MFMA - Success
+-- Performing Test HAVE_CPU_AVX_SUPPORT (check file: cmake/checks/cpu_avx.cpp)
+-- Performing Test HAVE_CPU_AVX_SUPPORT - Failed
+-- Performing Test HAVE_CXX_MAVX (check file: cmake/checks/cpu_avx.cpp)
+-- Performing Test HAVE_CXX_MAVX - Success
+-- Performing Test HAVE_CPU_AVX2_SUPPORT (check file: cmake/checks/cpu_avx2.cpp)
+-- Performing Test HAVE_CPU_AVX2_SUPPORT - Failed
+-- Performing Test HAVE_CXX_MAVX2 (check file: cmake/checks/cpu_avx2.cpp)
+-- Performing Test HAVE_CXX_MAVX2 - Success
+-- Performing Test HAVE_CPU_AVX_512F_SUPPORT (check file: cmake/checks/cpu_avx512.cpp)
+-- Performing Test HAVE_CPU_AVX_512F_SUPPORT - Failed
+-- Performing Test HAVE_CXX_MAVX512F (check file: cmake/checks/cpu_avx512.cpp)
+-- Performing Test HAVE_CXX_MAVX512F - Success
+-- Performing Test HAVE_CPU_AVX512_SKX_SUPPORT (check file: cmake/checks/cpu_avx512skx.cpp)
+-- Performing Test HAVE_CPU_AVX512_SKX_SUPPORT - Failed
+-- Performing Test HAVE_CXX_MAVX512F_MAVX512CD_MAVX512VL_MAVX512BW_MAVX512DQ (check file: cmake/checks/cpu_avx512skx.cpp)
+-- Performing Test HAVE_CXX_MAVX512F_MAVX512CD_MAVX512VL_MAVX512BW_MAVX512DQ - Success
+-- Performing Test HAVE_CPU_BASELINE_FLAGS
+-- Performing Test HAVE_CPU_BASELINE_FLAGS - Success
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_SSE4_2
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_SSE4_2 - Success
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_FP16
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_FP16 - Success
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_AVX
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_AVX - Success
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_AVX2
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_AVX2 - Success
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_AVX512_SKX
+-- Performing Test HAVE_CPU_DISPATCH_FLAGS_AVX512_SKX - Success
 -- Performing Test HAVE_CXX_FVISIBILITY_HIDDEN
 -- Performing Test HAVE_CXX_FVISIBILITY_HIDDEN - Success
 -- Performing Test HAVE_C_FVISIBILITY_HIDDEN
@@ -152,7 +191,10 @@
 -- Performing Test HAVE_CXX_FVISIBILITY_INLINES_HIDDEN - Success
 -- Performing Test HAVE_C_FVISIBILITY_INLINES_HIDDEN
 -- Performing Test HAVE_C_FVISIBILITY_INLINES_HIDDEN - Success
--- FP16: Feature disabled
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for malloc.h
+-- Looking for malloc.h - not found
 -- Check if the system is big endian
 -- Searching 16 bit integer
 -- Looking for sys/types.h
@@ -183,30 +225,113 @@
 -- Performing Test HAVE_C_WNO_MISSING_DECLARATIONS - Success
 -- Performing Test HAVE_C_WNO_SHIFT_NEGATIVE_VALUE
 -- Performing Test HAVE_C_WNO_SHIFT_NEGATIVE_VALUE - Success
+-- Performing Test HAVE_C_WNO_UNDEF
+-- Performing Test HAVE_C_WNO_UNDEF - Success
+-- Performing Test HAVE_C_WNO_IMPLICIT_FALLTHROUGH
+-- Performing Test HAVE_C_WNO_IMPLICIT_FALLTHROUGH - Success
+-- Performing Test HAVE_C_WNO_UNUSED_PARAMETER
+-- Performing Test HAVE_C_WNO_UNUSED_PARAMETER - Success
+-- Performing Test HAVE_C_WNO_SIGN_COMPARE
+-- Performing Test HAVE_C_WNO_SIGN_COMPARE - Success
+-- libjpeg-turbo: VERSION = 1.5.3, BUILD = opencv-3.4.2-libjpeg-turbo
+-- Check size of size_t
+-- Check size of size_t - done
 -- Looking for assert.h
 -- Looking for assert.h - found
+-- Looking for dlfcn.h
+-- Looking for dlfcn.h - found
 -- Looking for fcntl.h
 -- Looking for fcntl.h - found
+-- Looking for inttypes.h
+-- Looking for inttypes.h - found
 -- Looking for io.h
 -- Looking for io.h - not found
--- Looking for jbg_newlen
--- Looking for jbg_newlen - not found
--- Looking for mmap
--- Looking for mmap - found
+-- Looking for limits.h
+-- Looking for limits.h - found
+-- Looking for memory.h
+-- Looking for memory.h - found
 -- Looking for search.h
 -- Looking for search.h - found
 -- Looking for string.h
 -- Looking for string.h - found
+-- Looking for strings.h
+-- Looking for strings.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
 -- Looking for unistd.h
 -- Looking for unistd.h - found
+-- Performing Test C_HAS_inline
+-- Performing Test C_HAS_inline - Success
+-- Check size of signed short
+-- Check size of signed short - done
+-- Check size of unsigned short
+-- Check size of unsigned short - done
+-- Check size of signed int
+-- Check size of signed int - done
+-- Check size of unsigned int
+-- Check size of unsigned int - done
+-- Check size of signed long
+-- Check size of signed long - done
+-- Check size of unsigned long
+-- Check size of unsigned long - done
+-- Check size of signed long long
+-- Check size of signed long long - done
+-- Check size of unsigned long long
+-- Check size of unsigned long long - done
+-- Check size of unsigned char *
+-- Check size of unsigned char * - done
+-- Check size of ptrdiff_t
+-- Check size of ptrdiff_t - done
+-- Check size of INT8
+-- Check size of INT8 - failed
+-- Check size of INT16
+-- Check size of INT16 - failed
+-- Check size of INT32
+-- Check size of INT32 - failed
+-- Looking for floor
+-- Looking for floor - found
+-- Looking for pow
+-- Looking for pow - found
+-- Looking for sqrt
+-- Looking for sqrt - found
+-- Looking for isascii
+-- Looking for isascii - found
+-- Looking for memset
+-- Looking for memset - found
+-- Looking for mmap
+-- Looking for mmap - found
+-- Looking for getopt
+-- Looking for getopt - found
+-- Looking for memmove
+-- Looking for memmove - found
+-- Looking for setmode
+-- Looking for setmode - found
+-- Looking for strcasecmp
+-- Looking for strcasecmp - found
+-- Looking for strchr
+-- Looking for strchr - found
+-- Looking for strrchr
+-- Looking for strrchr - found
+-- Looking for strstr
+-- Looking for strstr - found
+-- Looking for strtol
+-- Looking for strtol - found
+-- Looking for strtol
+-- Looking for strtol - found
+-- Looking for strtoull
+-- Looking for strtoull - found
+-- Looking for lfind
+-- Looking for lfind - found
+-- Performing Test HAVE_SNPRINTF
+-- Performing Test HAVE_SNPRINTF - Success
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Using unsigned short
+-- Check if the system is big endian - little endian
 -- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_VARIABLE
 -- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_VARIABLE - Failed
--- Performing Test HAVE_C_WNO_UNDEF
--- Performing Test HAVE_C_WNO_UNDEF - Success
 -- Performing Test HAVE_C_WNO_UNUSED
 -- Performing Test HAVE_C_WNO_UNUSED - Success
--- Performing Test HAVE_C_WNO_SIGN_COMPARE
--- Performing Test HAVE_C_WNO_SIGN_COMPARE - Success
 -- Performing Test HAVE_C_WNO_CAST_ALIGN
 -- Performing Test HAVE_C_WNO_CAST_ALIGN - Success
 -- Performing Test HAVE_C_WNO_SHADOW
@@ -219,12 +344,12 @@
 -- Performing Test HAVE_C_WNO_INT_TO_POINTER_CAST - Success
 -- Performing Test HAVE_C_WNO_MISLEADING_INDENTATION
 -- Performing Test HAVE_C_WNO_MISLEADING_INDENTATION - Failed
--- Performing Test HAVE_C_WNO_UNUSED_PARAMETER
--- Performing Test HAVE_C_WNO_UNUSED_PARAMETER - Success
 -- Performing Test HAVE_CXX_WNO_MISSING_DECLARATIONS
 -- Performing Test HAVE_CXX_WNO_MISSING_DECLARATIONS - Success
 -- Performing Test HAVE_CXX_WNO_UNUSED_PARAMETER
 -- Performing Test HAVE_CXX_WNO_UNUSED_PARAMETER - Success
+-- Performing Test HAVE_CXX_WNO_UNDEF
+-- Performing Test HAVE_CXX_WNO_UNDEF - Success
 -- Performing Test HAVE_C_WNO_UNUSED_VARIABLE
 -- Performing Test HAVE_C_WNO_UNUSED_VARIABLE - Success
 -- Performing Test HAVE_C_WNO_UNUSED_FUNCTION
@@ -237,16 +362,16 @@
 -- Performing Test HAVE_C_WNO_UNUSED_BUT_SET_PARAMETER - Failed
 -- Performing Test HAVE_C_WNO_STRICT_OVERFLOW
 -- Performing Test HAVE_C_WNO_STRICT_OVERFLOW - Success
--- Looking for semaphore.h
--- Looking for semaphore.h - found
+-- Performing Test HAVE_C_WNO_POINTER_COMPARE
+-- Performing Test HAVE_C_WNO_POINTER_COMPARE - Failed
+-- Performing Test HAVE_C_WNO_ABSOLUTE_VALUE
+-- Performing Test HAVE_C_WNO_ABSOLUTE_VALUE - Success
 -- Performing Test HAVE_CXX_WNO_SHADOW
 -- Performing Test HAVE_CXX_WNO_SHADOW - Success
 -- Performing Test HAVE_CXX_WNO_UNUSED
 -- Performing Test HAVE_CXX_WNO_UNUSED - Success
 -- Performing Test HAVE_CXX_WNO_SIGN_COMPARE
 -- Performing Test HAVE_CXX_WNO_SIGN_COMPARE - Success
--- Performing Test HAVE_CXX_WNO_UNDEF
--- Performing Test HAVE_CXX_WNO_UNDEF - Success
 -- Performing Test HAVE_CXX_WNO_UNINITIALIZED
 -- Performing Test HAVE_CXX_WNO_UNINITIALIZED - Success
 -- Performing Test HAVE_CXX_WNO_SWITCH
@@ -261,6 +386,14 @@
 -- Performing Test HAVE_CXX_WNO_DEPRECATED_DECLARATIONS - Success
 -- Performing Test HAVE_CXX_WNO_MISLEADING_INDENTATION
 -- Performing Test HAVE_CXX_WNO_MISLEADING_INDENTATION - Failed
+-- Performing Test HAVE_CXX_WNO_DEPRECATED
+-- Performing Test HAVE_CXX_WNO_DEPRECATED - Success
+-- Performing Test HAVE_CXX_WNO_SUGGEST_OVERRIDE
+-- Performing Test HAVE_CXX_WNO_SUGGEST_OVERRIDE - Failed
+-- Performing Test HAVE_CXX_WNO_INCONSISTENT_MISSING_OVERRIDE
+-- Performing Test HAVE_CXX_WNO_INCONSISTENT_MISSING_OVERRIDE - Success
+-- Performing Test HAVE_CXX_WNO_IMPLICIT_FALLTHROUGH
+-- Performing Test HAVE_CXX_WNO_IMPLICIT_FALLTHROUGH - Success
 -- Checking for module 'gstreamer-base-1.0'
 --   No package 'gstreamer-base-1.0' found
 -- Checking for module 'gstreamer-video-1.0'
@@ -285,166 +418,192 @@
 --   No package 'libdc1394-2' found
 -- Checking for module 'libdc1394'
 --   No package 'libdc1394' found
--- Looking for linux/videodev.h
--- Looking for linux/videodev.h - not found
--- Looking for linux/videodev2.h
--- Looking for linux/videodev2.h - not found
--- Looking for sys/videoio.h
--- Looking for sys/videoio.h - not found
 -- Checking for modules 'libavcodec;libavformat;libavutil;libswscale'
---   No package 'libavcodec' found
---   No package 'libavformat' found
---   No package 'libavutil' found
---   No package 'libswscale' found
+--   Found libavcodec, version 58.18.100
+--   Found libavformat, version 58.12.100
+--   Found libavutil, version 56.14.100
+--   Found libswscale, version 5.1.100
 -- Checking for module 'libavresample'
---   No package 'libavresample' found
+--   Found libavresample, version 4.0.0
 -- Checking for module 'libgphoto2'
 --   No package 'libgphoto2' found
--- ICV: Downloading ippicv_macosx_20151201.tgz...
--- ICV: Unpacking ippicv_macosx_20151201.tgz to /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.2.0/target/osx/x86_64/3rdparty/ippicv...
--- ICV: Package successfully downloaded
--- found IPP (ICV version): 9.0.1 [9.0.1]
--- at: /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.2.0/target/osx/x86_64/3rdparty/ippicv/ippicv_osx
+-- IPPICV: Download: ippicv_2017u3_mac_intel64_general_20180518.tgz
+-- found Intel IPP (ICV version): 2017.0.3 [2017.0.3]
+-- at: /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.4.2/target/osx/x86_64/3rdparty/ippicv/ippicv_mac
+-- found Intel IPP IW sources: 2017.0.3
+-- at: /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.4.2/target/osx/x86_64/3rdparty/ippicv/ippiw_mac
 -- Could not find OpenBLAS include. Turning OpenBLAS_FOUND off
 -- Could not find OpenBLAS lib. Turning OpenBLAS_FOUND off
--- Could NOT find Atlas (missing:  Atlas_CBLAS_INCLUDE_DIR Atlas_CLAPACK_INCLUDE_DIR Atlas_BLAS_LIBRARY) 
--- LAPACK_IMPL: Apple, LAPACK_LIBRARIES: -framework Accelerate
--- Could NOT find Doxygen (missing:  DOXYGEN_EXECUTABLE) 
--- Found PythonInterp: /usr/local/bin/python2.7 (found suitable version "2.7.12", minimum required is "2.7") 
--- Could NOT find PythonLibs: Found unsuitable version "2.7.10", but required is exact version "2.7.12" (found /usr/lib/libpython2.7.dylib)
--- Could NOT find PythonInterp: Found unsuitable version "2.7.12", but required is at least "3.4" (found /usr/local/bin/python)
--- Could NOT find PythonInterp: Found unsuitable version "2.7.12", but required is at least "3.2" (found /usr/local/bin/python)
--- Found apache ant 1.9.7: /usr/local/bin/ant
--- Found JNI: /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/libjawt.dylib  
--- Could NOT find Matlab (missing:  MATLAB_MEX_SCRIPT MATLAB_INCLUDE_DIRS MATLAB_ROOT_DIR MATLAB_LIBRARIES MATLAB_LIBRARY_DIRS MATLAB_MEXEXT MATLAB_ARCH MATLAB_BIN) 
--- VTK is not found. Please set -DVTK_DIR in CMake to VTK build directory, or to VTK install subdirectory with VTKConfig.cmake file
--- Assume that non-module dependency is available: -framework OpenCL (for module opencv_core)
--- Performing Test HAVE_OBJCXX_FOBJC_EXCEPTIONS
--- Performing Test HAVE_OBJCXX_FOBJC_EXCEPTIONS - Success
+-- Could NOT find Atlas (missing: Atlas_CLAPACK_INCLUDE_DIR Atlas_BLAS_LIBRARY) 
+-- Looking for dgemm_
+-- Looking for dgemm_ - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - found
+-- Found Threads: TRUE  
+-- Found BLAS: /System/Library/Frameworks/Accelerate.framework  
+-- Looking for cheev_
+-- Looking for cheev_ - found
+-- A library with LAPACK API found.
+-- LAPACK(LAPACK/Apple): LAPACK_LIBRARIES: /System/Library/Frameworks/Accelerate.framework;/System/Library/Frameworks/Accelerate.framework
+-- Looking for Accelerate/Accelerate.h
+-- Looking for Accelerate/Accelerate.h - found
+-- Looking for Accelerate/Accelerate.h
+-- Looking for Accelerate/Accelerate.h - found
+-- LAPACK(LAPACK/Apple): Support is enabled.
+-- Performing Test HAVE_CXX_WNO_MISSING_PROTOTYPES
+-- Performing Test HAVE_CXX_WNO_MISSING_PROTOTYPES - Success
+-- Performing Test HAVE_CXX_WNO_UNUSED_LOCAL_TYPEDEFS
+-- Performing Test HAVE_CXX_WNO_UNUSED_LOCAL_TYPEDEFS - Success
+-- Performing Test HAVE_CXX_WNO_SIGN_PROMO
+-- Performing Test HAVE_CXX_WNO_SIGN_PROMO - Success
+-- Performing Test HAVE_CXX_WNO_TAUTOLOGICAL_UNDEFINED_COMPARE
+-- Performing Test HAVE_CXX_WNO_TAUTOLOGICAL_UNDEFINED_COMPARE - Success
+-- Performing Test HAVE_CXX_WNO_IGNORED_QUALIFIERS
+-- Performing Test HAVE_CXX_WNO_IGNORED_QUALIFIERS - Success
+-- Performing Test HAVE_CXX_WNO_UNUSED_FUNCTION
+-- Performing Test HAVE_CXX_WNO_UNUSED_FUNCTION - Success
 -- Performing Test HAVE_CXX_WNO_UNUSED_CONST_VARIABLE
 -- Performing Test HAVE_CXX_WNO_UNUSED_CONST_VARIABLE - Success
+-- Performing Test HAVE_CXX_WNO_SHORTEN_64_TO_32
+-- Performing Test HAVE_CXX_WNO_SHORTEN_64_TO_32 - Success
+-- Performing Test HAVE_CXX_WNO_INVALID_OFFSETOF
+-- Performing Test HAVE_CXX_WNO_INVALID_OFFSETOF - Success
+-- Performing Test HAVE_CXX_WNO_ENUM_COMPARE_SWITCH
+-- Performing Test HAVE_CXX_WNO_ENUM_COMPARE_SWITCH - Failed
+-- Found apache ant: /usr/local/bin/ant (1.10.4)
+-- Found JNI: /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/libjawt.dylib  
+-- Could NOT find Matlab (missing: MATLAB_MEX_SCRIPT MATLAB_INCLUDE_DIRS MATLAB_ROOT_DIR MATLAB_LIBRARIES MATLAB_LIBRARY_DIRS MATLAB_MEXEXT MATLAB_ARCH MATLAB_BIN) 
+-- VTK is not found. Please set -DVTK_DIR in CMake to VTK build directory, or to VTK install subdirectory with VTKConfig.cmake file
+-- Looking for dlerror in dl
+-- Looking for dlerror in dl - found
+-- Registering hook 'INIT_MODULE_SOURCES_opencv_dnn': /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.4.2/modules/dnn/cmake/hooks/INIT_MODULE_SOURCES_opencv_dnn.cmake
+-- Performing Test HAVE_CXX_WNO_MAYBE_UNINITIALIZED
+-- Performing Test HAVE_CXX_WNO_MAYBE_UNINITIALIZED - Failed
+-- Performing Test HAVE_CXX_WNO_ERROR_NON_VIRTUAL_DTOR
+-- Performing Test HAVE_CXX_WNO_ERROR_NON_VIRTUAL_DTOR - Success
+-- Performing Test HAVE_CXX_WNO_ENUM_COMPARE
+-- Performing Test HAVE_CXX_WNO_ENUM_COMPARE - Success
+-- opencv_dnn: filter out ocl4dnn source code
+-- Performing Test HAVE_OBJCXX_FOBJC_EXCEPTIONS
+-- Performing Test HAVE_OBJCXX_FOBJC_EXCEPTIONS - Success
 -- Performing Test HAVE_CXX_WNO_OVERLOADED_VIRTUAL
 -- Performing Test HAVE_CXX_WNO_OVERLOADED_VIRTUAL - Success
+-- Performing Test HAVE_CXX_WNO_UNUSED_PRIVATE_FIELD
+-- Performing Test HAVE_CXX_WNO_UNUSED_PRIVATE_FIELD - Success
 -- 
--- General configuration for OpenCV 3.2.0 =====================================
---   Version control:               e148824
+-- General configuration for OpenCV 3.4.2 =====================================
+--   Version control:               a25eb08
 -- 
 --   Platform:
---     Timestamp:                   2016-12-23T22:59:38Z
---     Host:                        Darwin 16.3.0 x86_64
---     CMake:                       3.6.3
+--     Timestamp:                   2018-08-04T17:17:11Z
+--     Host:                        Darwin 17.7.0 x86_64
+--     CMake:                       3.11.4
 --     CMake generator:             Unix Makefiles
 --     CMake build tool:            /usr/bin/make
 --     Configuration:               Release
 -- 
+--   CPU/HW features:
+--     Baseline:                    SSE SSE2 SSE3 SSSE3 SSE4_1
+--       requested:                 DETECT
+--     Dispatched code generation:  SSE4_2 FP16 AVX AVX2 AVX512_SKX
+--       requested:                 SSE4_1 SSE4_2 AVX FP16 AVX2 AVX512_SKX
+--       SSE4_2 (1 files):          + POPCNT SSE4_2
+--       FP16 (2 files):            + POPCNT SSE4_2 FP16 AVX
+--       AVX (5 files):             + POPCNT SSE4_2 AVX
+--       AVX2 (9 files):            + POPCNT SSE4_2 FP16 FMA3 AVX AVX2
+--       AVX512_SKX (1 files):      + POPCNT SSE4_2 FP16 FMA3 AVX AVX2 AVX_512F AVX512_SKX
+-- 
 --   C/C++:
 --     Built as dynamic libs?:      NO
---     C++ Compiler:                /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  (ver 8.0.0.8000042)
---     C++ flags (Release):         -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG  -DNDEBUG
---     C++ flags (Debug):           -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
+--     C++ Compiler:                /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  (ver 9.1.0.9020039)
+--     C++ flags (Release):         -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -mssse3 -msse4.1 -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG  -DNDEBUG
+--     C++ flags (Debug):           -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -mssse3 -msse4.1 -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
 --     C Compiler:                  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
---     C flags (Release):           -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG  -DNDEBUG
---     C flags (Debug):             -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
---     Linker flags (Release):
---     Linker flags (Debug):
+--     C flags (Release):           -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -mssse3 -msse4.1 -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG  -DNDEBUG
+--     C flags (Debug):             -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -Wno-comment -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -ffunction-sections -fdata-sections  -msse -msse2 -msse3 -mssse3 -msse4.1 -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
+--     Linker flags (Release):      
+--     Linker flags (Debug):        
 --     ccache:                      NO
 --     Precompiled headers:         NO
---     Extra dependencies:          -framework OpenCL -framework Cocoa -framework AVFoundation -framework CoreGraphics -framework CoreMedia -framework CoreVideo -framework QuartzCore stdc++ -framework Accelerate
---     3rdparty dependencies:       libjpeg libwebp libpng libtiff libjasper IlmImf zlib ippicv
+--     Extra dependencies:          -framework OpenCL /System/Library/Frameworks/Accelerate.framework avcodec avformat avutil swscale avresample -framework VideoDecodeAcceleration bz2 -framework Cocoa -framework Accelerate -framework AVFoundation -framework CoreGraphics -framework CoreMedia -framework CoreVideo -framework QuartzCore
+--     3rdparty dependencies:       ittnotify libprotobuf libjpeg-turbo libwebp libpng libtiff libjasper IlmImf zlib ippiw ippicv
 -- 
 --   OpenCV modules:
---     To be built:                 core flann imgproc ml photo video imgcodecs shape videoio highgui objdetect superres ts features2d calib3d java stitching videostab
---     Disabled:                    world
+--     To be built:                 calib3d core dnn features2d flann highgui imgcodecs imgproc java java_bindings_generator ml objdetect photo python2 python_bindings_generator shape stitching superres ts video videoio videostab
+--     Disabled:                    js world
 --     Disabled by dependency:      -
---     Unavailable:                 cudaarithm cudabgsegm cudacodec cudafeatures2d cudafilters cudaimgproc cudalegacy cudaobjdetect cudaoptflow cudastereo cudawarping cudev python2 python3 viz
+--     Unavailable:                 cudaarithm cudabgsegm cudacodec cudafeatures2d cudafilters cudaimgproc cudalegacy cudaobjdetect cudaoptflow cudastereo cudawarping cudev python3 viz
+--     Applications:                tests perf_tests apps
+--     Documentation:               NO
+--     Non-free algorithms:         NO
 -- 
 --   GUI: 
---     QT:                          NO
 --     Cocoa:                       YES
---     OpenGL support:              NO
 --     VTK support:                 NO
 -- 
 --   Media I/O: 
---     ZLib:                        build (ver 1.2.8)
---     JPEG:                        build (ver 90)
---     WEBP:                        build (ver 0.3.1)
---     PNG:                         build (ver 1.6.24)
---     TIFF:                        build (ver 42 - 4.0.2)
+--     ZLib:                        build (ver 1.2.11)
+--     JPEG:                        build-libjpeg-turbo (ver 1.5.3-62)
+--     WEBP:                        build (ver encoder: 0x020e)
+--     PNG:                         build (ver 1.6.34)
+--     TIFF:                        build (ver 42 - 4.0.9)
 --     JPEG 2000:                   build (ver 1.900.1)
 --     OpenEXR:                     build (ver 1.7.1)
---     GDAL:                        NO
---     GDCM:                        NO
+--     HDR:                         YES
+--     SUNRASTER:                   YES
+--     PXM:                         YES
 -- 
 --   Video I/O:
---     DC1394 1.x:                  NO
---     DC1394 2.x:                  NO
---     FFMPEG:                      NO
---       avcodec:                   NO
---       avformat:                  NO
---       avutil:                    NO
---       swscale:                   NO
---       avresample:                NO
+--     DC1394:                      NO
+--     FFMPEG:                      YES
+--       avcodec:                   YES (ver 58.18.100)
+--       avformat:                  YES (ver 58.12.100)
+--       avutil:                    YES (ver 56.14.100)
+--       swscale:                   YES (ver 5.1.100)
+--       avresample:                YES (ver 4.0.0)
 --     GStreamer:                   NO
---     OpenNI:                      NO
---     OpenNI PrimeSensor Modules:  NO
---     OpenNI2:                     NO
---     PvAPI:                       NO
---     GigEVisionSDK:               NO
---     Aravis SDK:                  NO
 --     AVFoundation:                YES
---     V4L/V4L2:                    NO/NO
---     XIMEA:                       NO
 --     gPhoto2:                     NO
 -- 
 --   Parallel framework:            GCD
 -- 
---   Other third-party libraries:
---     Use IPP:                     9.0.1 [9.0.1]
---          at:                     /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.2.0/target/osx/x86_64/3rdparty/ippicv/ippicv_osx
---     Use IPP Async:               NO
---     Use VA:                      NO
---     Use Intel VA-API/OpenCL:     NO
---     Use Lapack:                  YES (-framework Accelerate)
---     Use Eigen:                   YES (ver 3.2.10)
---     Use Cuda:                    NO
---     Use OpenCL:                  YES
---     Use OpenVX:                  NO
---     Use custom HAL:              NO
+--   Trace:                         YES (with Intel ITT)
 -- 
---   OpenCL:                        <Link with OpenCL library>
+--   Other third-party libraries:
+--     Intel IPP:                   2017.0.3 [2017.0.3]
+--            at:                   /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.4.2/target/osx/x86_64/3rdparty/ippicv/ippicv_mac
+--     Intel IPP IW:                sources (2017.0.3)
+--               at:                /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.4.2/target/osx/x86_64/3rdparty/ippicv/ippiw_mac
+--     Lapack:                      YES (/System/Library/Frameworks/Accelerate.framework /System/Library/Frameworks/Accelerate.framework)
+--     Eigen:                       YES (ver 3.3.5)
+--     Custom HAL:                  NO
+--     Protobuf:                    build (3.5.1)
+-- 
+--   OpenCL:                        YES (no extra features)
+--     Include path:                NO
 --     Link libraries:              -framework OpenCL
---     Use AMDFFT:                  NO
---     Use AMDBLAS:                 NO
 -- 
 --   Python 2:
---     Interpreter:                 /usr/local/bin/python2.7 (ver 2.7.12)
+--     Interpreter:                 /usr/bin/python2.7 (ver 2.7.10)
+--     Libraries:                   /usr/lib/libpython2.7.dylib (ver 2.7.10)
+--     numpy:                       /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy/core/include (ver 1.8.0rc1)
+--     packages path:               lib/python2.7/site-packages
 -- 
---   Python 3:
---     Interpreter:                 NO
+--   Python (for build):            /usr/bin/python2.7
 -- 
---   Python (for build):            /usr/local/bin/python2.7
--- 
---   Java:
---     ant:                         /usr/local/bin/ant (ver 1.9.7)
---     JNI:                         /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/include /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/include/darwin /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/include
+--   Java:                          
+--     ant:                         /usr/local/bin/ant (ver 1.10.4)
+--     JNI:                         /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/include /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/include/darwin /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/include
 --     Java wrappers:               YES
 --     Java tests:                  YES
 -- 
---   Matlab:                        Matlab not found or implicitly disabled
+--   Matlab:                        NO
 -- 
---   Documentation:
---     Doxygen:                     NO
--- 
---   Tests and samples:
---     Tests:                       YES
---     Performance tests:           YES
---     C/C++ Examples:              NO
--- 
---   Install path:                  /usr/local
--- 
---   cvconfig.h is in:              /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.2.0/target/osx/x86_64
+--   Install to:                    /usr/local
 -- -----------------------------------------------------------------
 -- 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.2.0/target/osx/x86_64
+-- Build files have been written to: /Users/jason/Projects/openpnp/opencv/opencv/opencv-3.4.2/target/osx/x86_64
