@@ -11,7 +11,7 @@
 
 1. Make sure Java is 1.7: `java -version`, `export JAVA_HOME=$(/usr/libexec/java_home -v1.7)` 
 2. `cd opencv/opencv-VERSION/target/osx/x86_64`
-3. `cmake -DBUILD_SHARED_LIBS=OFF -DEIGEN_INCLUDE_PATH=/usr/local/include/eigen3 ../../.. > cmake.log`
+3. `cmake -D BUILD_SHARED_LIBS=OFF -D WITH_EIGEN=OFF -D WITH_FFMPEG=OFF -D WITH_JAVA=ON ../../.. > cmake.log`
 4. `make -j8`
 5. `./copy-resources VERSION`. It won't finish, but it should get far enough.
 6. `mvn clean test`.
@@ -34,11 +34,10 @@ unzip $OPENCV_VERSION.zip
 cd ..
 ./create-targets.sh $OPENCV_VERSION
 cd opencv/opencv-$OPENCV_VERSION/target/linux/x86_$OPENCV_BITS
-cmake -DBUILD_SHARED_LIBS=OFF ../../.. > cmake.log
+cmake -D BUILD_SHARED_LIBS=OFF -D WITH_EIGEN=OFF -D WITH_FFMPEG=OFF -D WITH_JAVA=ON ../../.. > cmake.log
 make -j8
 transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
 tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
-cd opencv/opencv-$OPENCV_VERSION/target/linux/x86_$OPENCV_BITS
 zip -r x86_$OPENCV_BITS.zip lib/libopencv_java$OPENCV_SHORT_VERSION.so cmake.log
 transfer x86_$OPENCV_BITS.zip
 ```
@@ -72,7 +71,7 @@ cd opencv-3.2.0/
 ```
 mkdir build
 cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_OPENCL=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_SHARED_LIBS=OFF -D JAVA_INCLUDE_PATH=$JAVA_HOME/include -D JAVA_AWT_LIBRARY=$JAVA_HOME/jre/lib/amd64/libawt.so -D JAVA_JVM_LIBRARY=$JAVA_HOME/jre/lib/arm/server/libjvm.so -D CMAKE_INSTALL_PREFIX=/usr/local ..
+cmake -D BUILD_SHARED_LIBS=OFF -D WITH_EIGEN=OFF -D WITH_FFMPEG=OFF -D WITH_JAVA=ON -D WITH_OPENCL=OFF -D BUILD_PERF_TESTS=OFF -D JAVA_INCLUDE_PATH=$JAVA_HOME/include -D JAVA_AWT_LIBRARY=$JAVA_HOME/jre/lib/amd64/libawt.so -D JAVA_JVM_LIBRARY=$JAVA_HOME/jre/lib/arm/server/libjvm.so -D CMAKE_INSTALL_PREFIX=/usr/local ..
 make
 make install
 ```
