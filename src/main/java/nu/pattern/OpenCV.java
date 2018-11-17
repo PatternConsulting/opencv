@@ -19,8 +19,6 @@ import java.util.regex.Pattern;
 
 import org.opencv.core.Core;
 
-import sun.reflect.CallerSensitive;
-
 public class OpenCV {
 
   private final static Logger logger = Logger.getLogger(OpenCV.class.getName());
@@ -196,7 +194,8 @@ public class OpenCV {
       } catch (final UnsatisfiedLinkError ule) {
 
         /* Only update the library path and load if the original error indicates it's missing from the library path. */
-        if (!String.format("no %s in java.library.path", Core.NATIVE_LIBRARY_NAME).equals(ule.getMessage())) {
+        String errorFragment = String.format("no %s in java.library.path", Core.NATIVE_LIBRARY_NAME);
+        if (ule == null || !ule.getMessage().contains(errorFragment)) {
           logger.log(Level.FINEST, String.format("Encountered unexpected loading error."), ule);
           throw ule;
         }
@@ -312,7 +311,6 @@ public class OpenCV {
   /**
    * Selects the appropriate packaged binary, extracts it to a temporary location (which gets deleted when the JVM shuts down), and returns a {@link Path} to that file.
    */
-  @CallerSensitive
   private static Path extractNativeBinary() {
     final OS os = OS.getCurrent();
     final Arch arch = Arch.getCurrent();

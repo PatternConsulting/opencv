@@ -1,16 +1,14 @@
 package nu.pattern;
 
-import org.junit.Assert;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
-
-import java.net.URLClassLoader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @see <a href="https://github.com/PatternConsulting/opencv/issues/7">Issue 7</a>
@@ -39,40 +37,6 @@ public class LibraryLoadingTest {
 
       logger.log(Level.FINEST, "Final matrix: {0}.", m.dump());
     }
-  }
-
-  public static class TestClassLoader extends URLClassLoader {
-    public TestClassLoader() {
-      super(((URLClassLoader) getSystemClassLoader()).getURLs());
-    }
-
-    @Override
-    public Class<?> loadClass(String name) throws ClassNotFoundException {
-      if (name.startsWith("nu.pattern") || name.startsWith("org.opencv")) {
-        return super.findClass(name);
-      }
-
-      return super.loadClass(name);
-    }
-  }
-
-  /**
-   * Multiple {@link ClassLoader} instances should be able to successfully load the native library, and call OpenCV APIs.
-   */
-  @Test
-  @SuppressWarnings("unchecked")
-  public void multipleClassLoaders() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
-    final ClassLoader loader0 = new TestClassLoader();
-    final ClassLoader loader1 = new TestClassLoader();
-
-    final Class<?> c0 = Class.forName(Client.class.getName(), true, loader0);
-    final Class<?> c1 = Class.forName(Client.class.getName(), true, loader1);
-
-    Assert.assertNotEquals("A class from two different loaders should not be equal.", c0, c1);
-    Assert.assertNotSame("A class from two different loaders should not be same.", c0, c1);
-
-    c0.newInstance();
-    c1.newInstance();
   }
 
   /**
