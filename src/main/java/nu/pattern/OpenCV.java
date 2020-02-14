@@ -383,6 +383,7 @@ public class OpenCV {
       logger.log(Level.FINEST, "Copying native binary to \"{0}\".", destination);
       Files.createDirectories(destination.getParent());
       Files.copy(binary, destination);
+      binary.close();    
     } catch (final IOException ioe) {
       throw new IllegalStateException(String.format("Error writing native library to \"%s\".", destination), ioe);
     }
