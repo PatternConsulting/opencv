@@ -24,22 +24,10 @@ sudo apt full-upgrade -y
 sudo reboot
 sudo apt install default-jdk ant maven git cmake g++ open-vm-tools open-vm-tools-desktop -y
 sudo reboot
-git clone https://github.com/openpnp/opencv.git
-cd opencv; mkdir opencv; cd opencv
-export OPENCV_VERSION=3.4.2
-export OPENCV_BITS=32
-export OPENCV_SHORT_VERSION=`echo $OPENCV_VERSION | tr -d .`
-wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.zip
-unzip $OPENCV_VERSION.zip
-cd ..
-./create-targets.sh $OPENCV_VERSION
-cd opencv/opencv-$OPENCV_VERSION/target/linux/x86_$OPENCV_BITS
+sudo vmhgfs-fuse .host:/ /mnt/ -o allow_other -o uid=1000
+cd /mnt/opencv/opencv/opencv-VERSION/target/linux/x86_64
 cmake -D BUILD_SHARED_LIBS=OFF -D WITH_EIGEN=OFF -D WITH_FFMPEG=OFF -D WITH_JAVA=ON ../../.. > cmake.log
 make -j8
-transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
-tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
-zip -r x86_$OPENCV_BITS.zip lib/libopencv_java$OPENCV_SHORT_VERSION.so cmake.log
-transfer x86_$OPENCV_BITS.zip
 ```
 
 ## Linux/Arm for Raspberry Pi
