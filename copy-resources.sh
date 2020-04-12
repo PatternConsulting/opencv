@@ -24,13 +24,6 @@ cp $BASE_DIR/target/osx/x86_64/cmake.log src/main/resources/nu/pattern/opencv/os
 cp $BASE_DIR/target/osx/x86_64/lib/libopencv_java$SHORT_VERSION.dylib src/main/resources/nu/pattern/opencv/osx/x86_64
 
 # Linux
-echo "Cleaning up Linux x86_32..."
-rm -f src/main/resources/nu/pattern/opencv/linux/x86_32/cmake.log
-rm -f src/main/resources/nu/pattern/opencv/linux/x86_32/*.so
-echo "Copying Linux x86_32..."
-cp $BASE_DIR/target/linux/x86_32/cmake.log src/main/resources/nu/pattern/opencv/linux/x86_32
-cp $BASE_DIR/target/linux/x86_32/lib/libopencv_java$SHORT_VERSION.so src/main/resources/nu/pattern/opencv/linux/x86_32
-
 echo "Cleaning up Linux x86_64..."
 rm -f src/main/resources/nu/pattern/opencv/linux/x86_64/cmake.log
 rm -f src/main/resources/nu/pattern/opencv/linux/x86_64/*.so
